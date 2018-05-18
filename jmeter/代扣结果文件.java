@@ -226,6 +226,6 @@ if (bank.equals("abc") || bank.equals("cmbc") || bank.equals("boc") || bank.equa
 	Tools.withHold(bank);
 } else if (bank.equals("icbc")) {
 	Tools.withHoldICBC();
-} else if (bank.equals("fft")) {
+} else if (bank.equals("fft_old")) {
 	Tools.withHoldFFT();
 }

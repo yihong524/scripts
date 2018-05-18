@@ -49,3 +49,5 @@
 		}
 	]
 }
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6a384cd07593286a&redirect_uri=http%3a%2f%2fbilling-wx.orientpay.com%2fbill-steward%2fweixin%2fshjf.do&response_type=code&scope=snsapi_base&state=123#wechat_redirect
