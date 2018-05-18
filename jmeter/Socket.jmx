@@ -1,0 +1,2647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.8" jmeter="2.13 r1665067">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="测试计划" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1525335701000</longProp>
+        <longProp name="ThreadGroup.end_time">1525335701000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="apiURL" elementType="Argument">
+              <stringProp name="Argument.name">apiURL</stringProp>
+              <stringProp name="Argument.value">bill-front.sit1.of.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="port" elementType="Argument">
+              <stringProp name="Argument.name">port</stringProp>
+              <stringProp name="Argument.value">9999</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ftpURL" elementType="Argument">
+              <stringProp name="Argument.name">ftpURL</stringProp>
+              <stringProp name="Argument.value">ftp.sit1.of.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ftpPort" elementType="Argument">
+              <stringProp name="Argument.name">ftpPort</stringProp>
+              <stringProp name="Argument.value">21</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ftpUser" elementType="Argument">
+              <stringProp name="Argument.name">ftpUser</stringProp>
+              <stringProp name="Argument.value">ftp-test</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ftpPwd" elementType="Argument">
+              <stringProp name="Argument.name">ftpPwd</stringProp>
+              <stringProp name="Argument.value">123456</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="3.2.1 东方有线账单查询" enabled="false"/>
+        <hashTree>
+          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="新 - 用户证号查询" enabled="true">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="apiURL" elementType="Argument">
+                  <stringProp name="Argument.name">apiURL</stringProp>
+                  <stringProp name="Argument.value">${apiURL}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="port" elementType="Argument">
+                  <stringProp name="Argument.name">port</stringProp>
+                  <stringProp name="Argument.value">${port}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="txnVer" elementType="Argument">
+                  <stringProp name="Argument.name">txnVer</stringProp>
+                  <stringProp name="Argument.value">00</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="txnType" elementType="Argument">
+                  <stringProp name="Argument.name">txnType</stringProp>
+                  <stringProp name="Argument.value">Q3010</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="txnClsNo" elementType="Argument">
+                  <stringProp name="Argument.name">txnClsNo</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqBrhCode" elementType="Argument">
+                  <stringProp name="Argument.name">reqBrhCode</stringProp>
+                  <stringProp name="Argument.value">508290060120026</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqBrhDate" elementType="Argument">
+                  <stringProp name="Argument.name">reqBrhDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqBrhSeq" elementType="Argument">
+                  <stringProp name="Argument.name">reqBrhSeq</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMddHHmmssSSSSSS,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rspBrhCode" elementType="Argument">
+                  <stringProp name="Argument.name">rspBrhCode</stringProp>
+                  <stringProp name="Argument.value">666666666666666</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rspBrhDate" elementType="Argument">
+                  <stringProp name="Argument.name">rspBrhDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="repBrhSeq" elementType="Argument">
+                  <stringProp name="Argument.name">repBrhSeq</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMddHHmmssSSSSSS,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="mediaval" elementType="Argument">
+                  <stringProp name="Argument.name">mediaval</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="mediaPwd" elementType="Argument">
+                  <stringProp name="Argument.name">mediaPwd</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rspCode" elementType="Argument">
+                  <stringProp name="Argument.name">rspCode</stringProp>
+                  <stringProp name="Argument.value">00</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="key" elementType="Argument">
+                  <stringProp name="Argument.name">key</stringProp>
+                  <stringProp name="Argument.value">01babcef9dc21128fb9ed455530c25f5</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="annotation" elementType="Argument">
+                  <stringProp name="Argument.name">annotation</stringProp>
+                  <stringProp name="Argument.value">------------------------------------------</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billBrh" elementType="Argument">
+                  <stringProp name="Argument.name">billBrh</stringProp>
+                  <stringProp name="Argument.value">888880003502900</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="barCode" elementType="Argument">
+                  <stringProp name="Argument.name">barCode</stringProp>
+                  <stringProp name="Argument.value">0000000000000000000000000000000000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="queryType" elementType="Argument">
+                  <stringProp name="Argument.name">queryType</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="queryNum" elementType="Argument">
+                  <stringProp name="Argument.name">queryNum</stringProp>
+                  <stringProp name="Argument.value">01</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="queryNo" elementType="Argument">
+                  <stringProp name="Argument.name">queryNo</stringProp>
+                  <stringProp name="Argument.value">16804774213</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="payFlag" elementType="Argument">
+                  <stringProp name="Argument.name">payFlag</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="periodStart" elementType="Argument">
+                  <stringProp name="Argument.name">periodStart</stringProp>
+                  <stringProp name="Argument.value">201705</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="periodEnd" elementType="Argument">
+                  <stringProp name="Argument.name">periodEnd</stringProp>
+                  <stringProp name="Argument.value">201905</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pageNum" elementType="Argument">
+                  <stringProp name="Argument.name">pageNum</stringProp>
+                  <stringProp name="Argument.value">99</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pageNo" elementType="Argument">
+                  <stringProp name="Argument.name">pageNo</stringProp>
+                  <stringProp name="Argument.value">00</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="terminal" elementType="Argument">
+                  <stringProp name="Argument.name">terminal</stringProp>
+                  <stringProp name="Argument.value">00000000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="req2ndBrhCode" elementType="Argument">
+                  <stringProp name="Argument.name">req2ndBrhCode</stringProp>
+                  <stringProp name="Argument.value">cmbc0001</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">OFSocketApi.OCN_BillQuery_Socket</stringProp>
+          </JavaSampler>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>false</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <threadCounts>true</threadCounts>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="3.2.2 东方有线账单联网销帐" enabled="false"/>
+        <hashTree>
+          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="新 - 用户证号销账" enabled="true">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="apiURL" elementType="Argument">
+                  <stringProp name="Argument.name">apiURL</stringProp>
+                  <stringProp name="Argument.value">${apiURL}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="port" elementType="Argument">
+                  <stringProp name="Argument.name">port</stringProp>
+                  <stringProp name="Argument.value">${port}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="txnVer" elementType="Argument">
+                  <stringProp name="Argument.name">txnVer</stringProp>
+                  <stringProp name="Argument.value">00</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="txnType" elementType="Argument">
+                  <stringProp name="Argument.name">txnType</stringProp>
+                  <stringProp name="Argument.value">T3010</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="txnClsNo" elementType="Argument">
+                  <stringProp name="Argument.name">txnClsNo</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqBrhCode" elementType="Argument">
+                  <stringProp name="Argument.name">reqBrhCode</stringProp>
+                  <stringProp name="Argument.value">508290060120027</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqBrhDate" elementType="Argument">
+                  <stringProp name="Argument.name">reqBrhDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqBrhSeq" elementType="Argument">
+                  <stringProp name="Argument.name">reqBrhSeq</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMddHHmmssSSSSSS,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rspBrhCode" elementType="Argument">
+                  <stringProp name="Argument.name">rspBrhCode</stringProp>
+                  <stringProp name="Argument.value">666666666666666</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rspBrhDate" elementType="Argument">
+                  <stringProp name="Argument.name">rspBrhDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="repBrhSeq" elementType="Argument">
+                  <stringProp name="Argument.name">repBrhSeq</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMddHHmmssSSSSSS,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="mediaval" elementType="Argument">
+                  <stringProp name="Argument.name">mediaval</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="mediaPwd" elementType="Argument">
+                  <stringProp name="Argument.name">mediaPwd</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rspCode" elementType="Argument">
+                  <stringProp name="Argument.name">rspCode</stringProp>
+                  <stringProp name="Argument.value">00</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="key" elementType="Argument">
+                  <stringProp name="Argument.name">key</stringProp>
+                  <stringProp name="Argument.value">2123EFEF269A9647</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="annotation" elementType="Argument">
+                  <stringProp name="Argument.name">annotation</stringProp>
+                  <stringProp name="Argument.value">------------------------------------------</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billBrh" elementType="Argument">
+                  <stringProp name="Argument.name">billBrh</stringProp>
+                  <stringProp name="Argument.value">888880003502900</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="barCode" elementType="Argument">
+                  <stringProp name="Argument.name">barCode</stringProp>
+                  <stringProp name="Argument.value">0000000000000000000000000000000000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="wfType" elementType="Argument">
+                  <stringProp name="Argument.name">wfType</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billNo" elementType="Argument">
+                  <stringProp name="Argument.name">billNo</stringProp>
+                  <stringProp name="Argument.value">16804774213</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Period" elementType="Argument">
+                  <stringProp name="Argument.name">Period</stringProp>
+                  <stringProp name="Argument.value">201705</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="BatchNo" elementType="Argument">
+                  <stringProp name="Argument.name">BatchNo</stringProp>
+                  <stringProp name="Argument.value">00</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="payDate" elementType="Argument">
+                  <stringProp name="Argument.name">payDate</stringProp>
+                  <stringProp name="Argument.value">20180502</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="amount" elementType="Argument">
+                  <stringProp name="Argument.name">amount</stringProp>
+                  <stringProp name="Argument.value">16800</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="payType" elementType="Argument">
+                  <stringProp name="Argument.name">payType</stringProp>
+                  <stringProp name="Argument.value">01</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="terminal" elementType="Argument">
+                  <stringProp name="Argument.name">terminal</stringProp>
+                  <stringProp name="Argument.value">00000000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="req2ndBrhCode" elementType="Argument">
+                  <stringProp name="Argument.name">req2ndBrhCode</stringProp>
+                  <stringProp name="Argument.value">88000462-001</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userPayDate" elementType="Argument">
+                  <stringProp name="Argument.name">userPayDate</stringProp>
+                  <stringProp name="Argument.value">20180503</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">OFSocketApi.OCN_BillWriteOff_Socket</stringProp>
+          </JavaSampler>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="3.2.12 代扣串配" enabled="false"/>
+        <hashTree>
+          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Java请求" enabled="true">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="apiURL" elementType="Argument">
+                  <stringProp name="Argument.name">apiURL</stringProp>
+                  <stringProp name="Argument.value">${apiURL}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="port" elementType="Argument">
+                  <stringProp name="Argument.name">port</stringProp>
+                  <stringProp name="Argument.value">${port}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="key" elementType="Argument">
+                  <stringProp name="Argument.name">key</stringProp>
+                  <stringProp name="Argument.value">6e7713aeb52af1f333cd60bbe7967633</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="txnVer" elementType="Argument">
+                  <stringProp name="Argument.name">txnVer</stringProp>
+                  <stringProp name="Argument.value">00</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="txnType" elementType="Argument">
+                  <stringProp name="Argument.name">txnType</stringProp>
+                  <stringProp name="Argument.value">M3010</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="txnClsNo" elementType="Argument">
+                  <stringProp name="Argument.name">txnClsNo</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqBrhCode" elementType="Argument">
+                  <stringProp name="Argument.name">reqBrhCode</stringProp>
+                  <stringProp name="Argument.value">508290060120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqBrhDate" elementType="Argument">
+                  <stringProp name="Argument.name">reqBrhDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqBrhSeq" elementType="Argument">
+                  <stringProp name="Argument.name">reqBrhSeq</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMddHHmmssSSSSSS,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rspBrhCode" elementType="Argument">
+                  <stringProp name="Argument.name">rspBrhCode</stringProp>
+                  <stringProp name="Argument.value">666666666666666</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rspBrhDate" elementType="Argument">
+                  <stringProp name="Argument.name">rspBrhDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="repBrhSeq" elementType="Argument">
+                  <stringProp name="Argument.name">repBrhSeq</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMddHHmmssSSSSSS,)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="mediaval" elementType="Argument">
+                  <stringProp name="Argument.name">mediaval</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="mediaPwd" elementType="Argument">
+                  <stringProp name="Argument.name">mediaPwd</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="rspCode" elementType="Argument">
+                  <stringProp name="Argument.name">rspCode</stringProp>
+                  <stringProp name="Argument.value">00</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="annotation" elementType="Argument">
+                  <stringProp name="Argument.name">annotation</stringProp>
+                  <stringProp name="Argument.value">------------------------------------------</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billBrh" elementType="Argument">
+                  <stringProp name="Argument.name">billBrh</stringProp>
+                  <stringProp name="Argument.value">888880003502900</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userNo" elementType="Argument">
+                  <stringProp name="Argument.name">userNo</stringProp>
+                  <stringProp name="Argument.value">17300200197</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userName" elementType="Argument">
+                  <stringProp name="Argument.name">userName</stringProp>
+                  <stringProp name="Argument.value">孙淼</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="contactNo" elementType="Argument">
+                  <stringProp name="Argument.name">contactNo</stringProp>
+                  <stringProp name="Argument.value">17300200197</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="acctNo" elementType="Argument">
+                  <stringProp name="Argument.name">acctNo</stringProp>
+                  <stringProp name="Argument.value">17300200197</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="certType" elementType="Argument">
+                  <stringProp name="Argument.name">certType</stringProp>
+                  <stringProp name="Argument.value">01</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="certNo" elementType="Argument">
+                  <stringProp name="Argument.name">certNo</stringProp>
+                  <stringProp name="Argument.value">310106197412260828</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="acctName" elementType="Argument">
+                  <stringProp name="Argument.name">acctName</stringProp>
+                  <stringProp name="Argument.value">姜静芬</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="payBrhNm" elementType="Argument">
+                  <stringProp name="Argument.name">payBrhNm</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="matchType" elementType="Argument">
+                  <stringProp name="Argument.name">matchType</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reserved" elementType="Argument">
+                  <stringProp name="Argument.name">reserved</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billPlanId" elementType="Argument">
+                  <stringProp name="Argument.name">billPlanId</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="chlSubCode" elementType="Argument">
+                  <stringProp name="Argument.name">chlSubCode</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">JmeterBillSocketTest.JmeterSocketAgreement</stringProp>
+          </JavaSampler>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>false</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <threadCounts>true</threadCounts>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="串配" enabled="false"/>
+        <hashTree>
+          <FTPSampler guiclass="FtpTestSamplerGui" testclass="FTPSampler" testname="FTP请求" enabled="true">
+            <stringProp name="FTPSampler.server">${ftpURL}</stringProp>
+            <stringProp name="FTPSampler.port">${ftpPort}</stringProp>
+            <stringProp name="FTPSampler.filename">${remoteFilePath}</stringProp>
+            <stringProp name="FTPSampler.localfilename">${localFilePath}</stringProp>
+            <stringProp name="FTPSampler.inputdata"></stringProp>
+            <boolProp name="FTPSampler.binarymode">false</boolProp>
+            <boolProp name="FTPSampler.saveresponse">false</boolProp>
+            <boolProp name="FTPSampler.upload">true</boolProp>
+            <stringProp name="ConfigTestElement.username">${ftpUser}</stringProp>
+            <stringProp name="ConfigTestElement.password">${ftpPwd}</stringProp>
+          </FTPSampler>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="bank" elementType="Argument">
+                  <stringProp name="Argument.name">bank</stringProp>
+                  <stringProp name="Argument.value">fft_new</stringProp>
+                  <stringProp name="Argument.desc">付费通新代扣串配-fft_new;付费通老代扣串配-fft_old; 农行代扣-abc; 工行代扣-icbc; 招行代扣-cmbc; 中行代扣-boc; 上行代扣-bos</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqDate" elementType="Argument">
+                  <stringProp name="Argument.name">reqDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.desc">串配日期，必填，如20080120，默认当天</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="batch" elementType="Argument">
+                  <stringProp name="Argument.name">batch</stringProp>
+                  <stringProp name="Argument.value">05</stringProp>
+                  <stringProp name="Argument.desc">批次，两位数， 确保日期+批次的组合唯一</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userNo" elementType="Argument">
+                  <stringProp name="Argument.name">userNo</stringProp>
+                  <stringProp name="Argument.value">18300528764</stringProp>
+                  <stringProp name="Argument.desc">用户证号</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userName" elementType="Argument">
+                  <stringProp name="Argument.name">userName</stringProp>
+                  <stringProp name="Argument.value">蔡代芳</stringProp>
+                  <stringProp name="Argument.desc">账单的用户姓名</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="certNo" elementType="Argument">
+                  <stringProp name="Argument.name">certNo</stringProp>
+                  <stringProp name="Argument.value">320122198103192020</stringProp>
+                  <stringProp name="Argument.desc">身份证</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billPlanID" elementType="Argument">
+                  <stringProp name="Argument.name">billPlanID</stringProp>
+                  <stringProp name="Argument.value">200964898</stringProp>
+                  <stringProp name="Argument.desc">账单计划ID, 银行为上海银行时必填</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel</stringProp>
+                  <stringProp name="Argument.value">fft111222333</stringProp>
+                  <stringProp name="Argument.desc">二级请求机构代码,15位以内</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="path" elementType="Argument">
+                  <stringProp name="Argument.name">path</stringProp>
+                  <stringProp name="Argument.value">/Users/yihong/Documents/jmeter/Socket/temp/</stringProp>
+                  <stringProp name="Argument.desc">本地文件保存路径，确保路径存在</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+              <boolProp name="resetInterpreter">true</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import org.apache.commons.lang.StringUtils;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+// 获取自定义数据====================================================================================================
+String bank = vars.get(&quot;bank&quot;); //机构名称
+String reqDate=vars.get(&quot;reqDate&quot;); //日期
+String batch=vars.get(&quot;batch&quot;); //批次
+String userNo=vars.get(&quot;userNo&quot;); //串配号
+String userName=vars.get(&quot;userName&quot;); //串配号的名称
+String certNo=vars.get(&quot;certNo&quot;); //身份证号
+String billPlanID = vars.get(&quot;billPlanID&quot;); // 账单计划ID 上海银行需要
+String subChannel=vars.get(&quot;subChannel&quot;); //二级请求机构代码
+//文件本地存放路径
+String baseDir = vars.get(&quot;path&quot;);
+//默认数据=========================================================================================================
+String tnxType=&quot;00B30100 &quot;; //交易识别码, 串配
+String tnxTypeBOS = &quot;01B30100&quot;; //上海银行的交易识别码，串配
+String tnxTypeFFT = &quot;B102000&quot;; //付费通交易代码，串配
+String billBrh=&quot;888880003502900&quot;; //出账机构代码, 固定值
+String fileNo=String.valueOf(${__time(yyyyMMddss,)}); //文件批号 YYYYMMDDNN
+String totalNum=&quot;000001&quot;; //总记录数, 目前只支持1条数据
+String commentsTotal=&quot;000&quot;; //备注
+String certType=&quot;01&quot;; // 默认身份证类型
+
+//=========================银行设置===================================================================================
+//农行
+String abcCode=&quot;508290060120001&quot;; //农行渠道机构代码
+String abcFilePath=&quot;/ori-data/ftp-test/bill/abc/sign_request/&quot;; //农行结果文件ftp路径
+//招行
+String cmbcCode=&quot;508290060120026&quot;; //招行渠道机构代码
+String cmbcFilePath=&quot;/ori-data/ftp-test/bill/cmbc/sign_request/&quot;; //招行结果文件ftp路径
+//中国银行
+String bocCode=&quot;508290060120023&quot;; //中国银行渠道机构代码
+String bocFilePath=&quot;/ori-data/ftp-test/bill/boc/sign_request/&quot;; //中国银行结果文件ftp路径
+//上海银行
+String bosCode=&quot;508290060120024&quot;; //上海银行渠道机构代码
+String bosFilePath=&quot;/ori-data/ftp-test/bill/bos/sign_request/&quot;; //结果文件ftp路径
+//工商银行
+String icbcCode=&quot;508290060120002&quot;; //工商银行渠道机构代码
+String icbcFilePath=&quot;/ori-data/ftp-test/bill/icbc/sign_request/&quot;; //结果文件ftp路径
+//付费通老代扣
+String fftFilePath=&quot;/ori-data/ftp-test/bill/fft/sign_request/&quot;; //结果文件ftp路径
+//浦发银行 浦发没有文件串解配
+String spdbCode=&quot;508290060120025&quot;; //浦发外部渠道机构代码
+String spdbFilePath=&quot;/ori-data/ftp-test/bill/spdb/sign_request/&quot;; //结果文件ftp路径
+//民生银行 民生没有文件串解配
+String minshengCode=&quot;508290060120004&quot;; //民生外部渠道机构代码
+String minshengFilePath=&quot;/ori-data/ftp-test/bill/minsheng/sign_request/&quot;; //结果文件ftp路径
+
+//===================================================================================================================
+//保存文件成gbk， 填充0或者空格
+
+public class Tools {
+	public static void transferFile(String srcString, String destFileName) {
+		FileOutputStream fos = new FileOutputStream(destFileName);
+		OutputStreamWriter osw = new OutputStreamWriter(fos, &quot;GBK&quot;);
+		osw.write(srcString);
+		osw.flush();
+	}
+
+	public static String PrefixInteger(String srcString, int length) {
+		/*
+		 * 例如，要求：6位编号自动生成，递增，格式为“000001”。 解释：0代表前面要补的字符，6代表字符串长度，d表示参数为整数类型
+		 */
+		return StringUtils.leftPad(srcString, length, &quot;0&quot;);
+	}
+
+	public static String PrefixSpace(String srcString, int length) {
+		int a = (srcString.getBytes().length - srcString.length())/2;
+		if (a &gt; 0) {
+			// 如果包含N个中文字符(一个中文 占两位长度)，则值域长度减少N位(length = length - N)
+			length = length - a;
+		}
+		// 右侧补 空字符串 至达到长度length
+		return StringUtils.rightPad(srcString, length, &quot; &quot;);
+	}
+	//农行、招行、中国银行报文组装
+	public static void sign(String bank){
+		String reqBrhCode = &quot;&quot;;
+		String filePath = &quot;&quot;;
+		
+		if(bank.equals(&quot;abc&quot;)){
+			 reqBrhCode = abcCode; // 农行渠道机构代码
+			 filePath = abcFilePath; // 串配文件ftp路径
+		}else if(bank.equals(&quot;cmbc&quot;)){
+			 reqBrhCode = cmbcCode; // 招行渠道机构代码
+			 filePath = cmbcFilePath; // 串配文件ftp路径
+		}else if(bank.equals(&quot;boc&quot;)){
+			 reqBrhCode = bocCode; // 中国银行渠道机构代码
+			 filePath = bocFilePath; // 串配文件ftp路径
+		}
+
+		// 文件名组装
+		String fileName = reqBrhCode + reqDate + batch + &quot;.&quot; + tnxType;
+
+		// 汇总
+		String totalLine = reqBrhCode + reqDate + batch + totalNum + commentsTotal + &quot;\n&quot;;
+
+		// 明细
+		String detailLine = billBrh + PrefixSpace(userNo, 20) + PrefixSpace(userName, 10)
+		+ PrefixSpace((userNo + certNo), 40) + PrefixSpace(&quot;&quot;, 40) + certType + PrefixSpace(certNo, 30)
+		+ PrefixSpace(userName, 10) + PrefixSpace(&quot;&quot;, 50);
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15);
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	}
+	//上海银行串配报文组装
+	public static void signBOS(){
+		String reqBrhCode = bosCode; // 上海银行渠道机构代码
+		String filePath = bosFilePath; // 上海银行串配文件ftp路径
+		String serialNum = new SimpleDateFormat(&quot;yyyyMMddHHmmssSSS&quot;).format(new Date()) + &quot;0001&quot;; // 随机21位,上海银行串配凭证
+
+		// 文件名组装
+		String fileName = reqBrhCode + reqDate + batch + &quot;.&quot; + tnxTypeBOS;
+
+		// 汇总
+		String totalLine = reqBrhCode + reqDate + batch + totalNum + commentsTotal + &quot;\n&quot;;
+
+		// 明细 上海银行串配报文特殊
+		String detailLine = billBrh + PrefixSpace(userNo, 20) + PrefixSpace(userName, 10) + PrefixSpace(billPlanID, 15)
+				+ PrefixSpace(serialNum, 27) + PrefixSpace(&quot;&quot;, 95) + &quot;BOS&quot; + PrefixSpace(&quot;&quot;, 62);
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	}
+	//工商银行串配报文组装
+	public static void signICBC(){
+		String reqBrhCode = icbcCode; // 渠道机构代码
+		String filePath = icbcFilePath; // 串配文件ftp路径
+		String month = PrefixInteger(String.valueOf(${__time(MM,)}), 2); //月份
+		String serialNo = new SimpleDateFormat(&quot;SSSS&quot;).format(new Date()); //文件序列号 HHmm
+		//**************工商银行特色设置****************
+		String companyCode = &quot;0837003&quot;; // 公司代码
+		String bankAcct = &quot;6212261001084770335&quot;; // 扣款银行账号，银行为工行时必填，19位
+		String customerID = &quot;266003641158&quot;; // 客户编号，默认
+		String postID = &quot;200042&quot;; // 客户邮编, 设为默认值
+		String returnAddr = &quot;无&quot;;// 公司返回地址
+		String returnName = &quot;&quot;; // 公司返回姓名
+		String bankCode = &quot;007&quot;; // 办理授权支行代码
+		String bankBranchCode = &quot;266&quot;; // 办理授权储蓄所号
+		String status = &quot;10&quot;; // 10 串配； 20 解串配******************************
+
+		// 文件名组装
+		String fileName = &quot;SQ&quot; + month + serialNo + reqDate + &quot;.&quot; + &quot;003&quot;;
+
+		// 汇总
+		String totalLine = &quot;E&quot; + String.valueOf(${__time(yyyyMM,)}) + totalNum + &quot;\n&quot;;
+
+		// 明细
+		String detailLine = companyCode + PrefixInteger(userNo, 13) + bankAcct + customerID + PrefixSpace(userName, 40)
+				+ PrefixSpace(userName, 8) + postID + PrefixSpace(returnAddr, 50) + PrefixSpace(returnName, 8) + bankCode
+				+ bankBranchCode + status + PrefixSpace(&quot;&quot;, 20) + &quot;000000000000&quot;;
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15);
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	}
+
+	//付费通串配报文组装
+	public static void signFFT(String fftType){
+
+		// String reqBrhCode = fftCode; // 渠道机构代码
+		String filePath = fftFilePath; // 串配文件ftp路径
+		String month = PrefixInteger(new SimpleDateFormat(&quot;MM&quot;).format(new Date()) , 2); //月份
+		//**************付费通特色设置****************
+		String authType = &quot;0&quot;;  //授权类型：0 - 申请； 1 - 撤销
+		String authNoType = &quot;0&quot;;  //授权号码类型： 0 - 合同号；1 - 设备号
+		String fftCode = &quot;888880201000023&quot;; //付费通新代扣机构号， 新代扣串解配使用这个
+		String fftCodeOld = &quot;777777777777777&quot;; //付费通老代扣的机构号，老代扣串解配使用这个
+		String fftAcct = &quot;1000&quot; + (int)((Math.random()*9+1)*100000); //随机付费通账号， 10位
+		String fftTelphone = &quot;138000000&quot; + (int)((Math.random()*9+1)*10); //联系电话，随机
+		String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
+
+		//如果是付费通老代扣，把fftCode值替换成“&quot;777777777777777&quot;
+		if (fftType.equals(&quot;old&quot;)){
+			fftCode = fftCodeOld;
+		}
+
+		// 文件名组装
+		String fileName = billBrh + reqDate + batch + &quot;.&quot; + tnxTypeFFT;
+
+		// 汇总
+		String totalLine = billBrh + reqDate + batch + totalNum + commentsTotal + &quot;\n&quot;;
+
+		// 明细
+		String detailLine = authType + billBrh + authNoType + PrefixSpace(userNo, 30) + reqDate + fftCode + PrefixSpace(fftAcct, 40)
+			+ PrefixSpace(userName, 40) + PrefixSpace(&quot;&quot;, 110) + PrefixSpace(certNo, 20) + PrefixSpace(&quot;&quot;, 20)
+			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(deviceNo, 30) + commentsTotal;
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15);
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	}
+}
+
+if (bank.equals(&quot;abc&quot;) || bank.equals(&quot;cmbc&quot;) || bank.equals(&quot;boc&quot;)) {
+	Tools.sign(bank);
+} else if (bank.equals(&quot;bos&quot;)) {
+	Tools.signBOS();
+} else if (bank.equals(&quot;icbc&quot;)) {
+	Tools.signICBC();
+} else if (bank.equals(&quot;fft_old&quot;)) {
+	Tools.signFFT(&quot;old&quot;);  //付费通老代扣的串配
+} else if (bank.equals(&quot;fft_new&quot;)) {
+	Tools.signFFT(&quot;new&quot;);  //付费通新代扣的串配
+}
+</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>false</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <threadCounts>true</threadCounts>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="BOSS代扣文件" enabled="false"/>
+        <hashTree>
+          <FTPSampler guiclass="FtpTestSamplerGui" testclass="FTPSampler" testname="FTP请求" enabled="true">
+            <stringProp name="FTPSampler.server">${ftpURL}</stringProp>
+            <stringProp name="FTPSampler.port">${ftpPort}</stringProp>
+            <stringProp name="FTPSampler.filename">${remoteFilePath}</stringProp>
+            <stringProp name="FTPSampler.localfilename">${localFilePath}</stringProp>
+            <stringProp name="FTPSampler.inputdata"></stringProp>
+            <boolProp name="FTPSampler.binarymode">false</boolProp>
+            <boolProp name="FTPSampler.saveresponse">false</boolProp>
+            <boolProp name="FTPSampler.upload">true</boolProp>
+            <stringProp name="ConfigTestElement.username">${ftpUser}</stringProp>
+            <stringProp name="ConfigTestElement.password">${ftpPwd}</stringProp>
+          </FTPSampler>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="reqDate" elementType="Argument">
+                  <stringProp name="Argument.name">reqDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.desc">串配日期，必填，如20080120，默认当天</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="batch" elementType="Argument">
+                  <stringProp name="Argument.name">batch</stringProp>
+                  <stringProp name="Argument.value">08</stringProp>
+                  <stringProp name="Argument.desc">批次，两位， 确保日期+批次的组合唯一，不然文件不处理</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userNo" elementType="Argument">
+                  <stringProp name="Argument.name">userNo</stringProp>
+                  <stringProp name="Argument.value">18301135473</stringProp>
+                  <stringProp name="Argument.desc">有线账单为用户证号</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billPlanID" elementType="Argument">
+                  <stringProp name="Argument.name">billPlanID</stringProp>
+                  <stringProp name="Argument.value">201813867</stringProp>
+                  <stringProp name="Argument.desc">账单计划ID, 银行为上海银行时必填</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billAmount" elementType="Argument">
+                  <stringProp name="Argument.name">billAmount</stringProp>
+                  <stringProp name="Argument.value">6100</stringProp>
+                  <stringProp name="Argument.desc">账单金额，单位分</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="period" elementType="Argument">
+                  <stringProp name="Argument.name">period</stringProp>
+                  <stringProp name="Argument.value">201711</stringProp>
+                  <stringProp name="Argument.desc">帐期</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="barcode" elementType="Argument">
+                  <stringProp name="Argument.name">barcode</stringProp>
+                  <stringProp name="Argument.value">0610000201813867171011000000610053</stringProp>
+                  <stringProp name="Argument.desc">34位</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="bossSignNo" elementType="Argument">
+                  <stringProp name="Argument.name">bossSignNo</stringProp>
+                  <stringProp name="Argument.value">100000516640</stringProp>
+                  <stringProp name="Argument.desc">BOSS端签约协议号，在用户串配查询菜单查询</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="bossOrgCode" elementType="Argument">
+                  <stringProp name="Argument.name">bossOrgCode</stringProp>
+                  <stringProp name="Argument.value">11295</stringProp>
+                  <stringProp name="Argument.desc">8+1子公司代码，5位</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="path" elementType="Argument">
+                  <stringProp name="Argument.name">path</stringProp>
+                  <stringProp name="Argument.value">/Users/yihong/Documents/jmeter/Socket/temp/</stringProp>
+                  <stringProp name="Argument.desc">本地文件保存路径，确保路径存在</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+              <boolProp name="resetInterpreter">true</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import org.apache.commons.lang.StringUtils;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+// 获取自定义数据====================================================================================================
+// String bank = vars.get(&quot;bank&quot;); //机构名称
+String reqDate=vars.get(&quot;reqDate&quot;); //日期
+String batch=vars.get(&quot;batch&quot;); //批次
+// String userNo=vars.get(&quot;userNo&quot;); //串配号
+// String userName=vars.get(&quot;userName&quot;); //串配号的名称
+// String certNo=vars.get(&quot;certNo&quot;); //身份证号
+// String subChannel=vars.get(&quot;subChannel&quot;); //二级请求机构代码
+String billAmt = vars.get(&quot;billAmount&quot;);
+String period = vars.get(&quot;period&quot;);  //帐期
+String barcode = vars.get(&quot;barcode&quot;);  //条形码
+String billPlanID = vars.get(&quot;billPlanID&quot;);  //账单计划ID
+String bossSignNo = vars.get(&quot;bossSignNo&quot;); //第三方签约协议号
+String bossOrgCode = vars.get(&quot;bossOrgCode&quot;); //子公司代码
+//文件本地存放路径
+String baseDir = vars.get(&quot;path&quot;);
+// //默认数据=========================================================================================================
+String tnxType=&quot;00B30500 &quot;; //交易识别码, boss代扣文件
+String billBrh=&quot;888880003502900&quot;; //出账机构代码, 固定值
+String totalNum=&quot;000001&quot;; //总记录数, 目前只支持1条数据
+String commentsTotal=&quot;000&quot;; //备注
+String bossFilePath = &quot;/ori-data/ftp-test/bill/boss/withhold_request/&quot;; //BOSS代扣请求文件路径
+
+//===================================================================================================================
+//保存文件成gbk， 填充0或者空格
+
+public class Tools {
+	public static void transferFile(String srcString, String destFileName) {
+		FileOutputStream fos = new FileOutputStream(destFileName);
+		OutputStreamWriter osw = new OutputStreamWriter(fos, &quot;GBK&quot;);
+		osw.write(srcString);
+		osw.flush();
+	}
+
+	public static String PrefixInteger(String srcString, int length) {
+		/*
+		 * 例如，要求：6位编号自动生成，递增，格式为“000001”。 解释：0代表前面要补的字符，6代表字符串长度，d表示参数为整数类型
+		 */
+		return StringUtils.leftPad(srcString, length, &quot;0&quot;);
+	}
+
+	public static String PrefixSpace(String srcString, int length) {
+		int a = (srcString.getBytes().length - srcString.length())/2;
+		if (a &gt; 0) {
+			// 如果包含N个中文字符(一个中文 占两位长度)，则值域长度减少N位(length = length - N)
+			length = length - a;
+		}
+		// 右侧补 空字符串 至达到长度length
+		return StringUtils.rightPad(srcString, length, &quot; &quot;);
+	}
+
+	public static void bossWithholdReq(){
+		String bossSerialNum = new SimpleDateFormat(&quot;yyyyMMddHHmmss&quot;).format(new Date()); //boss 扣款请求流水，随机14位
+		String billStart = &quot;201801&quot;; //计费开始月份， 写死
+		String billEnd = &quot;201812&quot;;  //计费结束月份，写死
+		String billType = &quot;0 &quot;; //账单类型
+		
+		// 文件名组装
+		String fileName = billBrh + reqDate + batch + &quot;.&quot; + tnxType;
+
+		// 汇总
+		String totalLine = billBrh + reqDate + totalNum + PrefixInteger(billAmt, 14) + commentsTotal + &quot;\n&quot;;
+
+		// 明细
+		String detailLine = PrefixSpace(bossSerialNum, 20) + period + billStart + billEnd + billType + barcode 
+			+ PrefixSpace(billPlanID, 20) + &quot;000000000000000&quot; + PrefixSpace(billPlanID, 20) + PrefixSpace(bossSignNo, 20)
+			+ PrefixInteger(billAmt, 10) + PrefixSpace(bossOrgCode, 15) + commentsTotal;
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = bossFilePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	} 
+}
+
+Tools.bossWithholdReq();</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>false</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <threadCounts>true</threadCounts>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="代扣结果文件" enabled="false"/>
+        <hashTree>
+          <FTPSampler guiclass="FtpTestSamplerGui" testclass="FTPSampler" testname="FTP请求" enabled="true">
+            <stringProp name="FTPSampler.server">${ftpURL}</stringProp>
+            <stringProp name="FTPSampler.port">${ftpPort}</stringProp>
+            <stringProp name="FTPSampler.filename">${remoteFilePath}</stringProp>
+            <stringProp name="FTPSampler.localfilename">${localFilePath}</stringProp>
+            <stringProp name="FTPSampler.inputdata"></stringProp>
+            <boolProp name="FTPSampler.binarymode">false</boolProp>
+            <boolProp name="FTPSampler.saveresponse">false</boolProp>
+            <boolProp name="FTPSampler.upload">true</boolProp>
+            <stringProp name="ConfigTestElement.username">${ftpUser}</stringProp>
+            <stringProp name="ConfigTestElement.password">${ftpPwd}</stringProp>
+          </FTPSampler>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="bank" elementType="Argument">
+                  <stringProp name="Argument.name">bank</stringProp>
+                  <stringProp name="Argument.value">icbc</stringProp>
+                  <stringProp name="Argument.desc">付费通-fft; 农行代扣-abc; 工行代扣-icbc; 招行代扣-cmbc; 中行代扣-boc; 上行代扣-bos;浦发代扣-spdb;民生-minsheng</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqDate" elementType="Argument">
+                  <stringProp name="Argument.name">reqDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.desc">串配日期，必填，如20080120，默认当天</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="batch" elementType="Argument">
+                  <stringProp name="Argument.name">batch</stringProp>
+                  <stringProp name="Argument.value">08</stringProp>
+                  <stringProp name="Argument.desc">批次，两位数， 确保日期+批次的组合唯一</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userNo" elementType="Argument">
+                  <stringProp name="Argument.name">userNo</stringProp>
+                  <stringProp name="Argument.value">18301135473</stringProp>
+                  <stringProp name="Argument.desc">用户证号</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userName" elementType="Argument">
+                  <stringProp name="Argument.name">userName</stringProp>
+                  <stringProp name="Argument.value">顾为民</stringProp>
+                  <stringProp name="Argument.desc">账单的用户姓名</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="certNo" elementType="Argument">
+                  <stringProp name="Argument.name">certNo</stringProp>
+                  <stringProp name="Argument.value">310105195401012858</stringProp>
+                  <stringProp name="Argument.desc">身份证</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billPlanID" elementType="Argument">
+                  <stringProp name="Argument.name">billPlanID</stringProp>
+                  <stringProp name="Argument.value">201813867</stringProp>
+                  <stringProp name="Argument.desc">账单计划ID, 银行为上海银行时必填</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.desc">二级请求机构代码,15位以内</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannelPayDate" elementType="Argument">
+                  <stringProp name="Argument.name">subChannelPayDate</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.desc">YYYYMMDD, 8位</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billAmount" elementType="Argument">
+                  <stringProp name="Argument.name">billAmount</stringProp>
+                  <stringProp name="Argument.value">6100</stringProp>
+                  <stringProp name="Argument.desc">账单金额，单位分</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="period" elementType="Argument">
+                  <stringProp name="Argument.name">period</stringProp>
+                  <stringProp name="Argument.value">201711</stringProp>
+                  <stringProp name="Argument.desc">帐期</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="barcode" elementType="Argument">
+                  <stringProp name="Argument.name">barcode</stringProp>
+                  <stringProp name="Argument.value">0610000201813867171011000000610053	</stringProp>
+                  <stringProp name="Argument.desc">34位</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="bossOrgCode" elementType="Argument">
+                  <stringProp name="Argument.name">bossOrgCode</stringProp>
+                  <stringProp name="Argument.value">11295</stringProp>
+                  <stringProp name="Argument.desc">8+1子公司代码，5位</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="bossSignNo" elementType="Argument">
+                  <stringProp name="Argument.name">bossSignNo</stringProp>
+                  <stringProp name="Argument.value">100000516640</stringProp>
+                  <stringProp name="Argument.desc">BOSS端签约协议号，在用户串配查询菜单查询</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="yfProcessNo" elementType="Argument">
+                  <stringProp name="Argument.name">yfProcessNo</stringProp>
+                  <stringProp name="Argument.value">ZD180515143403719635</stringProp>
+                  <stringProp name="Argument.desc">亿付业务处理号 20位，支付订单号</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="path" elementType="Argument">
+                  <stringProp name="Argument.name">path</stringProp>
+                  <stringProp name="Argument.value">/Users/yihong/Documents/jmeter/Socket/temp/</stringProp>
+                  <stringProp name="Argument.desc">本地文件保存路径，确保路径存在</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="comments" elementType="Argument">
+                  <stringProp name="Argument.name">comments</stringProp>
+                  <stringProp name="Argument.value">工行结果文件需要在运营系统中上传</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">这里的fft代扣是老代扣，新付费通代扣是走联机销账</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+              <boolProp name="resetInterpreter">true</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import org.apache.commons.lang.StringUtils;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+// 获取自定义数据====================================================================================================
+String bank = vars.get(&quot;bank&quot;); //机构名称
+String reqDate = vars.get(&quot;reqDate&quot;); //日期
+String batch = vars.get(&quot;batch&quot;); //批次
+String userNo=vars.get(&quot;userNo&quot;); //串配号
+String userName=vars.get(&quot;userName&quot;); //串配号的名称
+String certNo=vars.get(&quot;certNo&quot;); //身份证号
+String subChannel=vars.get(&quot;subChannel&quot;); //二级请求机构代码
+String subChannelPayDate = vars.get(&quot;subChannelPayDate&quot;); //用户交款日期
+String billAmt = vars.get(&quot;billAmount&quot;);
+String period = vars.get(&quot;period&quot;);  //帐期
+String barcode = vars.get(&quot;barcode&quot;);  //条形码
+String billPlanID = vars.get(&quot;billPlanID&quot;);  //账单计划ID
+String bossSignNo = vars.get(&quot;bossSignNo&quot;); //第三方签约协议号
+String bossOrgCode = vars.get(&quot;bossOrgCode&quot;); //子公司代码
+String yfProcessNo = vars.get(&quot;yfProcessNo&quot;); //亿付业务处理号 ??
+//文件本地存放路径
+String baseDir = vars.get(&quot;path&quot;);
+// //默认数据=========================================================================================================
+String tnxType = &quot;00B30510&quot;; //交易识别码, boss代扣结果文件
+String tnxTypeFFT = &quot;L101000&quot;; //付费通老代扣结果： 成功销账
+String billBrh = &quot;888880003502900&quot;; //出账机构代码, 固定值
+String totalNum = &quot;000001&quot;; //总记录数, 目前只支持1条数据
+String commentsTotal = &quot;000&quot;; //备注
+
+//=========================银行设置===================================================================================
+//农行
+String abcCode=&quot;508290060120001&quot;; //农行渠道机构代码
+String abcFilePath=&quot;/ori-data/ftp-test/bill/abc/withhold_result/&quot;; //农行代扣结果文件ftp路径
+//招行
+String cmbcCode=&quot;508290060120026&quot;; //招行渠道机构代码
+String cmbcFilePath=&quot;/ori-data/ftp-test/bill/cmbc/withhold_result/&quot;; //招行代扣结果文件ftp路径
+//中国银行
+String bocCode=&quot;508290060120023&quot;; //中国银行渠道机构代码
+String bocFilePath=&quot;/ori-data/ftp-test/bill/boc/withhold_result/&quot;; //中国银行代扣结果文件ftp路径
+//上海银行
+String bosCode=&quot;508290060120024&quot;; //上海银行渠道机构代码
+String bosFilePath=&quot;/ori-data/ftp-test/bill/bos/withhold_result/&quot;; //代扣结果文件ftp路径
+//工商银行
+String icbcCode=&quot;508290060120002&quot;; //工商银行渠道机构代码
+String icbcFilePath=&quot;/ori-data/ftp-test/bill/icbc/withhold_result/&quot;; //代扣结果文件ftp路径
+//付费通老代扣
+String fftFilePath=&quot;/ori-data/ftp-test/bill/fft/withhold_result/&quot;; //代扣结果文件ftp路径
+//浦发银行
+String spdbCode=&quot;508290060120025&quot;; //浦发外部渠道机构代码
+String spdbFilePath=&quot;/ori-data/ftp-test/bill/spdb/withhold_result/&quot;; //代扣结果文件ftp路径
+//民生银行
+String minshengCode=&quot;508290060120004&quot;; //民生外部渠道机构代码
+String minshengFilePath=&quot;/ori-data/ftp-test/bill/minsheng/withhold_result/&quot;; //代扣结果文件ftp路径
+
+//===================================================================================================================
+//保存文件成gbk， 填充0或者空格
+
+public class Tools {
+	public static void transferFile(String srcString, String destFileName) {
+		FileOutputStream fos = new FileOutputStream(destFileName);
+		OutputStreamWriter osw = new OutputStreamWriter(fos, &quot;GBK&quot;);
+		osw.write(srcString);
+		osw.flush();
+	}
+
+	public static String PrefixInteger(String srcString, int length) {
+		/*
+		 * 例如，要求：6位编号自动生成，递增，格式为“000001”。 解释：0代表前面要补的字符，6代表字符串长度，d表示参数为整数类型
+		 */
+		return StringUtils.leftPad(srcString, length, &quot;0&quot;);
+	}
+
+	public static String PrefixSpace(String srcString, int length) {
+		int a = (srcString.getBytes().length - srcString.length())/2;
+		if (a &gt; 0) {
+			// 如果包含N个中文字符(一个中文 占两位长度)，则值域长度减少N位(length = length - N)
+			length = length - a;
+		}
+		// 右侧补 空字符串 至达到长度length
+		return StringUtils.rightPad(srcString, length, &quot; &quot;);
+	}
+
+	public static void withHold(String bank){
+		String reqBrhCode = &quot;&quot;;
+		String filePath = &quot;&quot;;
+		// String fileBatch = new SimpleDateFormat(&quot;yyyyMMddSSS&quot;).format(new Date());  //文件批号 ，11位
+		String channelPayDate = reqDate;  //渠道扣款日期
+		String channelSettleDate = reqDate; //渠道清算日期
+		String channelSerialNo = PrefixSpace(&quot;&quot;, 20); //渠道扣款流水号
+		String channelResult = &quot;1&quot;; //渠道扣款结果: 1 - 成功； 0 - 失败
+		String reasonCode = PrefixSpace(&quot;&quot;, 4); //退票原因, 默认空白
+		
+		if(bank.equals(&quot;abc&quot;)){
+			reqBrhCode = abcCode; // 农行渠道机构代码
+			filePath = abcFilePath; // 串配文件ftp路径
+		}else if(bank.equals(&quot;cmbc&quot;)){
+			reqBrhCode = cmbcCode; // 招行渠道机构代码
+			filePath = cmbcFilePath; // 串配文件ftp路径
+		}else if(bank.equals(&quot;boc&quot;)){
+			reqBrhCode = bocCode; // 中国银行渠道机构代码
+			filePath = bocFilePath; // 串配文件ftp路径
+		}else if(bank.equals(&quot;spdb&quot;)){  //浦发代扣
+			reqBrhCode = spdbCode;
+			filePath = spdbFilePath;
+		}else if(bank.equals(&quot;minsheng&quot;)){ //民生代扣
+			reqBrhCode = minshengCode;
+			filePath = minshengFilePath;
+		}else if(bank.equals(&quot;bos&quot;)){  //上海银行
+			reqBrhCode = bosCode;
+			filePath = bosFilePath;
+		}
+
+		// 文件名组装
+		String fileName = reqBrhCode + reqDate + &quot;00&quot; + batch + &quot;.&quot; + tnxType;
+
+		// 汇总 没有失败笔数
+		String totalLine = reqBrhCode + reqDate+ &quot;0&quot; + batch + totalNum + PrefixInteger(billAmt, 14) + totalNum + PrefixInteger(billAmt, 14)
+			+ &quot;000000&quot; + &quot;00000000000000&quot; + commentsTotal + &quot;\n&quot;;
+
+		// 明细  
+		// 渠道签约号 农行 - 用户证号 + 身份证
+		String detailLine = billBrh + PrefixSpace(userNo, 20) + PrefixSpace(userName, 10)
+		+ PrefixSpace((userNo + certNo), 40) + PrefixSpace(yfProcessNo, 20) + PrefixSpace(userNo, 40) + PrefixInteger(billAmt, 10)
+		+ period + channelPayDate + channelSettleDate + channelSerialNo + channelResult + reasonCode;
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15) + subChannelPayDate + commentsTotal;
+		} else {
+			detailLine = detailLine + commentsTotal;
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	} 
+
+	public static void withHoldICBC(){
+		String reqBrhCode = icbcCode;
+		// String filePath = icbcFilePath;  //工行代扣结果文件要手动上传到运营
+		// // String fileBatch = new SimpleDateFormat(&quot;yyyyMMddSSS&quot;).format(new Date());  //文件批号 ，11位
+		String channelPayDate = reqDate;  //渠道扣款日期
+		// String channelSettleDate = reqDate; //渠道清算日期
+		// String channelSerialNo = PrefixSpace(&quot;&quot;, 20); //渠道扣款流水号
+		// String channelResult = &quot;1&quot;; //渠道扣款结果: 1 - 成功； 0 - 失败
+		// String reasonCode = PrefixSpace(&quot;&quot;, 4); //退票原因, 默认空白
+		String successCode = &quot;2&quot;; //成功=2
+		String payOrderNo = yfProcessNo.substring(1); // 扣款银行账号,19位, 对应为亿付支付号
+		String fileNo = &quot;0&quot; + batch; 
+
+		
+		// 文件名组装
+		String fileName = &quot;DSFB&quot; + &quot;0837&quot; + &quot;.&quot; + &quot;003&quot; + &quot;.&quot; + fileNo;
+
+		// 明细
+		String detailLine = PrefixSpace(successCode, 1) + PrefixSpace(payOrderNo, 19) + &quot;2&quot; + PrefixSpace(reqDate, 8)
+			+ PrefixInteger(billAmt, 12) + &quot;1&quot; + &quot;0837003&quot; + PrefixInteger(fileNo, 5) + &quot;0&quot; + &quot;000&quot; + period
+			+ PrefixInteger(userNo, 13);
+
+		// //判断subChannel不为空时，明细里面增加二级渠道报备字段
+		// if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+		// 	detailLine = detailLine + PrefixSpace(subChannel, 15) + subChannelPayDate + commentsTotal;
+		// } else {
+		// 	detailLine = detailLine + commentsTotal;
+		// }
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile(detailLine,localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		// vars.put(&quot;localFilePath&quot;, localFilePath);
+		// vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	}
+
+	public static void withHoldFFT(){
+		// String reqBrhCode = &quot;&quot;;
+		String filePath = fftFilePath;
+		// String fileBatch = new SimpleDateFormat(&quot;yyyyMMddSSS&quot;).format(new Date());  //文件批号 ，11位
+		String channelPayDate = reqDate;  //渠道扣款日期
+		// String channelSettleDate = reqDate; //渠道清算日期
+		// String channelSerialNo = PrefixSpace(&quot;&quot;, 20); //渠道扣款流水号
+		// String channelResult = &quot;1&quot;; //渠道扣款结果: 1 - 成功； 0 - 失败
+		// String reasonCode = PrefixSpace(&quot;&quot;, 4); //退票原因, 默认空白
+		String withHoldCategory = &quot;1&quot;; //销账种类 0－代收销帐 1－代扣销帐 2－充值
+		String withHoldType = &quot;1&quot;; //销账方式: 0－根据条码销帐  1－根据号码种类＋号码＋帐期销帐  2－根据号码种类＋号码充值
+		String bankAcct =new SimpleDateFormat(&quot;yyyyMMmmss&quot;).format(new Date()); // 扣款银行账号,10位
+		String payType = &quot;00&quot;; //缴费方式  00－现金  01－银行卡/帐户  02－行业卡
+
+
+
+		// 文件名组装
+		String fileName = billBrh + reqDate + batch + &quot;.&quot; + tnxTypeFFT;
+
+		// 汇总 没有失败笔数
+		String totalLine = billBrh + reqDate + batch + totalNum + PrefixInteger(billAmt, 14) + commentsTotal + &quot;\n&quot;;
+
+		// 明细  
+		String detailLine = withHoldCategory + withHoldType + billBrh + PrefixSpace(barcode, 34) + PrefixSpace(period, 6)
+			+ &quot;00&quot; + &quot;0&quot; + PrefixSpace(yfProcessNo, 30) + PrefixInteger(billAmt, 10) + PrefixSpace(reqDate, 8)
+			+ &quot;777777777777777&quot; + PrefixSpace(&quot;&quot;, 8) + PrefixSpace(bankAcct, 40) + PrefixSpace(payType, 2);
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15) + subChannelPayDate + commentsTotal;
+		} else {
+			detailLine = detailLine + commentsTotal;
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	}
+}
+
+if (bank.equals(&quot;abc&quot;) || bank.equals(&quot;cmbc&quot;) || bank.equals(&quot;boc&quot;) || bank.equals(&quot;spdb&quot;) || bank.equals(&quot;minsheng&quot;) || bank.equals(&quot;bos&quot;)) {
+	Tools.withHold(bank);
+} else if (bank.equals(&quot;icbc&quot;)) {
+	Tools.withHoldICBC();
+} else if (bank.equals(&quot;fft&quot;)) {
+	Tools.withHoldFFT();
+}
+</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>false</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <threadCounts>true</threadCounts>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="解串配" enabled="false"/>
+        <hashTree>
+          <FTPSampler guiclass="FtpTestSamplerGui" testclass="FTPSampler" testname="FTP请求" enabled="true">
+            <stringProp name="FTPSampler.server">${ftpURL}</stringProp>
+            <stringProp name="FTPSampler.port">${ftpPort}</stringProp>
+            <stringProp name="FTPSampler.filename">${remoteFilePath}</stringProp>
+            <stringProp name="FTPSampler.localfilename">${localFilePath}</stringProp>
+            <stringProp name="FTPSampler.inputdata"></stringProp>
+            <boolProp name="FTPSampler.binarymode">false</boolProp>
+            <boolProp name="FTPSampler.saveresponse">false</boolProp>
+            <boolProp name="FTPSampler.upload">true</boolProp>
+            <stringProp name="ConfigTestElement.username">${ftpUser}</stringProp>
+            <stringProp name="ConfigTestElement.password">${ftpPwd}</stringProp>
+          </FTPSampler>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="bank" elementType="Argument">
+                  <stringProp name="Argument.name">bank</stringProp>
+                  <stringProp name="Argument.value">icbc</stringProp>
+                  <stringProp name="Argument.desc">付费通新代扣解串配-fft_new;付费通老代扣解串配-fft_old; 农行代扣-abc; 工行代扣-icbc; 招行代扣-cmbc; 中行代扣-boc; 上行代扣-bos</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqDate" elementType="Argument">
+                  <stringProp name="Argument.name">reqDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.desc">串配日期，必填，如20080120，默认当天</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="batch" elementType="Argument">
+                  <stringProp name="Argument.name">batch</stringProp>
+                  <stringProp name="Argument.value">06</stringProp>
+                  <stringProp name="Argument.desc">批次，两位数， 确保日期+批次的组合唯一</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userNo" elementType="Argument">
+                  <stringProp name="Argument.name">userNo</stringProp>
+                  <stringProp name="Argument.value">18301135473</stringProp>
+                  <stringProp name="Argument.desc">用户证号</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="userName" elementType="Argument">
+                  <stringProp name="Argument.name">userName</stringProp>
+                  <stringProp name="Argument.value">顾为民</stringProp>
+                  <stringProp name="Argument.desc">账单的用户姓名</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="certNo" elementType="Argument">
+                  <stringProp name="Argument.name">certNo</stringProp>
+                  <stringProp name="Argument.value">310105195401012858</stringProp>
+                  <stringProp name="Argument.desc">身份证</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="billPlanID" elementType="Argument">
+                  <stringProp name="Argument.name">billPlanID</stringProp>
+                  <stringProp name="Argument.value">201813867</stringProp>
+                  <stringProp name="Argument.desc">账单计划ID, 银行为上海银行时必填</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel</stringProp>
+                  <stringProp name="Argument.value">icbc1112233</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="path" elementType="Argument">
+                  <stringProp name="Argument.name">path</stringProp>
+                  <stringProp name="Argument.value">/Users/yihong/Documents/jmeter/Socket/temp/</stringProp>
+                  <stringProp name="Argument.desc">本地文件保存路径，确保路径存在</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+              <boolProp name="resetInterpreter">true</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import org.apache.commons.lang.StringUtils;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+// 获取自定义数据====================================================================================================
+String bank = vars.get(&quot;bank&quot;); //机构名称
+String reqDate=vars.get(&quot;reqDate&quot;); //日期
+String batch=vars.get(&quot;batch&quot;); //批次
+String userNo=vars.get(&quot;userNo&quot;); //串配号
+String userName=vars.get(&quot;userName&quot;); //串配号的名称
+String certNo=vars.get(&quot;certNo&quot;); //身份证号
+String billPlanID = vars.get(&quot;billPlanID&quot;); // 账单计划ID 上海银行需要
+String subChannel=vars.get(&quot;subChannel&quot;); //二级请求机构代码
+//文件本地存放路径
+String baseDir = vars.get(&quot;path&quot;);
+//默认数据=========================================================================================================
+String tnxType=&quot;00B30300&quot;; //交易识别码, 解串配
+String tnxTypeBOS=&quot;01B30300&quot;; //上海银行交易识别码, 解串配
+String tnxTypeFFT = &quot;B102000&quot;; //付费通交易代码，串配
+String billBrh=&quot;888880003502900&quot;; //出账机构代码, 固定值
+// String fileNo=String.valueOf(${__time(yyyyMMddss,)}); //文件批号 YYYYMMDDNN
+String totalNum=&quot;000001&quot;; //总记录数, 目前只支持1条数据
+String commentsTotal=&quot;000&quot;; //备注
+String certType=&quot;01&quot;; // 默认身份证类型
+
+//=========================银行设置===================================================================================
+//农行
+String abcCode=&quot;508290060120001&quot;; //农行渠道机构代码
+String abcFilePath=&quot;/ori-data/ftp-test/bill/abc/unsign_request/&quot;; //农行结果文件ftp路径
+//招行
+String cmbcCode=&quot;508290060120026&quot;; //招行渠道机构代码
+String cmbcFilePath=&quot;/ori-data/ftp-test/bill/cmbc/unsign_request/&quot;; //招行结果文件ftp路径
+//中国银行
+String bocCode=&quot;508290060120023&quot;; //中国银行渠道机构代码
+String bocFilePath=&quot;/ori-data/ftp-test/bill/boc/unsign_request/&quot;; //中国银行代扣结果文件ftp路径
+//上海银行
+String bosCode=&quot;508290060120024&quot;; //上海银行渠道机构代码
+String bosFilePath=&quot;/ori-data/ftp-test/bill/bos/unsign_request/&quot;; //结果文件ftp路径
+//工商银行
+String icbcCode=&quot;508290060120002&quot;; //工商银行渠道机构代码
+String icbcFilePath=&quot;/ori-data/ftp-test/bill/icbc/sign_request/&quot;; //结果文件ftp路径  工商银行解串配和串配是同一个目录
+//付费通老代扣
+String fftFilePath=&quot;/ori-data/ftp-test/bill/fft/sign_request/&quot;; //结果文件ftp路径  付费通解串配和串配是同一个目录
+//浦发银行 浦发没有文件串解配
+String spdbCode=&quot;508290060120025&quot;; //浦发外部渠道机构代码
+String spdbFilePath=&quot;/ori-data/ftp-test/bill/spdb/sign_request/&quot;; //结果文件ftp路径
+//民生银行 民生没有文件串解配
+String minshengCode=&quot;508290060120004&quot;; //民生外部渠道机构代码
+String minshengFilePath=&quot;/ori-data/ftp-test/bill/minsheng/sign_request/&quot;; //结果文件ftp路径
+
+//===================================================================================================================
+//保存文件成gbk， 填充0或者空格
+
+public class Tools {
+	public static void transferFile(String srcString, String destFileName) {
+		FileOutputStream fos = new FileOutputStream(destFileName);
+		OutputStreamWriter osw = new OutputStreamWriter(fos, &quot;GBK&quot;);
+		osw.write(srcString);
+		osw.flush();
+	}
+
+	public static String PrefixInteger(String srcString, int length) {
+		/*
+		 * 例如，要求：6位编号自动生成，递增，格式为“000001”。 解释：0代表前面要补的字符，6代表字符串长度，d表示参数为整数类型
+		 */
+		return StringUtils.leftPad(srcString, length, &quot;0&quot;);
+	}
+
+	public static String PrefixSpace(String srcString, int length) {
+		int a = (srcString.getBytes().length - srcString.length())/2;
+		if (a &gt; 0) {
+			// 如果包含N个中文字符(一个中文 占两位长度)，则值域长度减少N位(length = length - N)
+			length = length - a;
+		}
+		// 右侧补 空字符串 至达到长度length
+		return StringUtils.rightPad(srcString, length, &quot; &quot;);
+	}
+	//农行、招行、中国银行报文组装
+	public static void unsign(String bank){
+		String reqBrhCode = &quot;&quot;;
+		String filePath = &quot;&quot;;
+		
+		if(bank.equals(&quot;abc&quot;)){
+			 reqBrhCode = abcCode; // 农行渠道机构代码
+			 filePath = abcFilePath; // 串配文件ftp路径
+		}else if(bank.equals(&quot;cmbc&quot;)){
+			 reqBrhCode = cmbcCode; // 招行渠道机构代码
+			 filePath = cmbcFilePath; // 串配文件ftp路径
+		}else if(bank.equals(&quot;boc&quot;)){
+			 reqBrhCode = bocCode; // 中国银行渠道机构代码
+			 filePath = bocFilePath; // 串配文件ftp路径
+		}
+
+		// 文件名组装
+		String fileName = reqBrhCode + reqDate + batch + &quot;.&quot; + tnxType;
+
+		// 汇总
+		String totalLine = reqBrhCode + reqDate + batch + totalNum + commentsTotal + &quot;\n&quot;;
+
+		// 明细
+		String detailLine = billBrh + PrefixSpace(userNo, 20) + PrefixSpace(userName, 10)
+		+ PrefixSpace((userNo + certNo), 40) + PrefixSpace(&quot;&quot;, 20);
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	}
+	//上海银行报文组装
+	public static void unsignBOS(){
+		String reqBrhCode = bosCode; // 上海银行渠道机构代码
+		String filePath = bosFilePath; // 上海银行串配文件ftp路径
+		String serialNum = new SimpleDateFormat(&quot;yyyyMMddHHmmssSSS&quot;).format(new Date()) + &quot;0001&quot;; // 随机21位,上海银行串配凭证
+
+		// 文件名组装
+		String fileName = reqBrhCode + reqDate + batch + &quot;.&quot; + tnxTypeBOS;
+
+		// 汇总
+		String totalLine = reqBrhCode + reqDate + batch + totalNum + commentsTotal + &quot;\n&quot;;
+
+		// 明细 上海银行串配报文特殊
+		String detailLine = billBrh + PrefixSpace(userNo, 20) + PrefixSpace(userName, 10)
+				+ PrefixSpace(serialNum, 40) + PrefixSpace(userNo, 60);
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	}
+	//工商银行串配报文组装
+	public static void unsignICBC(){
+
+		String reqBrhCode = icbcCode; // 渠道机构代码
+		String filePath = icbcFilePath; // 串配文件ftp路径
+		String month = PrefixInteger(String.valueOf(${__time(MM,)}), 2); //月份
+		String serialNo = new SimpleDateFormat(&quot;SSSS&quot;).format(new Date()); //文件序列号 HHmm
+		//**************工商银行特色设置****************
+		String companyCode = &quot;0837003&quot;; // 公司代码
+		String bankAcct = &quot;6212261001084770335&quot;; // 扣款银行账号，银行为工行时必填，19位
+		String customerID = &quot;266003641158&quot;; // 客户编号，默认,12位
+		String postID = &quot;200042&quot;; // 客户邮编, 设为默认值
+		String returnAddr = &quot;无&quot;;// 公司返回地址
+		String returnName = &quot;&quot;; // 公司返回姓名
+		String bankCode = &quot;007&quot;; // 办理授权支行代码
+		String bankBranchCode = &quot;266&quot;; // 办理授权储蓄所号
+		String status = &quot;20&quot;; // 10 串配； 20 解串配******************************
+
+		// 文件名组装
+		String fileName = &quot;SQ&quot; + month + serialNo + reqDate + &quot;.&quot; + &quot;003&quot;;
+
+		// 汇总
+		String totalLine = &quot;E&quot; + reqDate + totalNum + &quot;\n&quot;;
+
+		// 明细
+		String detailLine = companyCode + PrefixInteger(userNo, 13) + bankAcct + customerID + PrefixSpace(userName, 40)
+				+ PrefixSpace(userName, 8) + postID + PrefixSpace(returnAddr, 50) + PrefixSpace(returnName, 8) + bankCode
+				+ bankBranchCode + status + PrefixSpace(&quot;&quot;, 20) + &quot;000000000000&quot;;
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15);
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	}
+
+	//付费通解串配报文组装
+	public static void unsignFFT(String fftType){
+
+		// String reqBrhCode = fftCode; // 渠道机构代码
+		String filePath = fftFilePath; // 串配文件ftp路径
+		String month = PrefixInteger(String.valueOf(${__time(MM,)}), 2); //月份
+		String serialNo = PrefixInteger(String.valueOf(${__time(mmss,)}), 4); //文件序列号 HHmm
+		//**************付费通特色设置****************
+		String authType = &quot;1&quot;;  //授权类型：0 - 申请； 1 - 撤销
+		String authNoType = &quot;0&quot;;  //授权号码类型： 0 - 合同号；1 - 设备号
+		String fftCode = &quot;888880201000023&quot;; //付费通新代扣机构号， 新代扣串解配使用这个
+		String fftCodeOld = &quot;777777777777777&quot;; //付费通老代扣的机构号，老代扣串解配使用这个
+		String fftAcct = &quot;1000&quot; + (int)((Math.random()*9+1)*100000); //随机付费通账号， 10位
+		String fftTelphone = &quot;138000000&quot; + (int)((Math.random()*9+1)*10); //联系电话，随机
+		String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
+
+		//如果是付费通老代扣，把fftCode值替换成“&quot;777777777777777&quot;
+		if (fftType.equals(&quot;old&quot;)){
+			fftCode = fftCodeOld;
+		}
+
+		// 文件名组装
+		String fileName = billBrh + reqDate + batch + &quot;.&quot; + tnxTypeFFT;
+
+		// 汇总
+		String totalLine = billBrh + reqDate + batch + totalNum + commentsTotal + &quot;\n&quot;;
+
+		// 明细
+		String detailLine = authType + billBrh + authNoType + PrefixSpace(userNo, 30) + reqDate + fftCode + PrefixSpace(fftAcct, 40)
+			+ PrefixSpace(userName, 40) + PrefixSpace(&quot;&quot;, 110) + PrefixSpace(certNo, 20) + PrefixSpace(&quot;&quot;, 20)
+			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(deviceNo, 30) + commentsTotal;
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15);
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	}
+}
+
+if (bank.equals(&quot;abc&quot;) || bank.equals(&quot;cmbc&quot;) || bank.equals(&quot;boc&quot;)) {
+	Tools.unsign(bank);
+} else if (bank.equals(&quot;bos&quot;)) {
+	Tools.unsignBOS();
+} else if (bank.equals(&quot;icbc&quot;)) {
+	Tools.unsignICBC();
+} else if (bank.equals(&quot;fft_old&quot;)) {
+	Tools.unsignFFT(&quot;old&quot;);  //付费通老代扣的解串配
+} else if (bank.equals(&quot;fft_new&quot;)) {
+	Tools.unsignFFT(&quot;new&quot;);  //付费通新代扣的解串配
+}
+
+</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>false</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <threadCounts>true</threadCounts>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="二级渠道报备请求" enabled="false"/>
+        <hashTree>
+          <FTPSampler guiclass="FtpTestSamplerGui" testclass="FTPSampler" testname="FTP请求" enabled="true">
+            <stringProp name="FTPSampler.server">${ftpURL}</stringProp>
+            <stringProp name="FTPSampler.port">${ftpPort}</stringProp>
+            <stringProp name="FTPSampler.filename">${remoteFilePath}</stringProp>
+            <stringProp name="FTPSampler.localfilename">${localFilePath}</stringProp>
+            <stringProp name="FTPSampler.inputdata"></stringProp>
+            <boolProp name="FTPSampler.binarymode">false</boolProp>
+            <boolProp name="FTPSampler.saveresponse">false</boolProp>
+            <boolProp name="FTPSampler.upload">true</boolProp>
+            <stringProp name="ConfigTestElement.username">${ftpUser}</stringProp>
+            <stringProp name="ConfigTestElement.password">${ftpPwd}</stringProp>
+          </FTPSampler>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="bank" elementType="Argument">
+                  <stringProp name="Argument.name">bank</stringProp>
+                  <stringProp name="Argument.value">cmbc</stringProp>
+                  <stringProp name="Argument.desc">光大联机-ceb_online; 付费通联机:fft_online;农行代扣-abc; 招行代扣-cmbc; 中行代扣-boc;</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="reqDate" elementType="Argument">
+                  <stringProp name="Argument.name">reqDate</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                  <stringProp name="Argument.desc">串配日期，必填，如20080120，默认当天</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="batch" elementType="Argument">
+                  <stringProp name="Argument.name">batch</stringProp>
+                  <stringProp name="Argument.value">08</stringProp>
+                  <stringProp name="Argument.desc">批次，两位数， 确保日期+批次的组合唯一</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_type" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_type</stringProp>
+                  <stringProp name="Argument.value">2</stringProp>
+                  <stringProp name="Argument.desc">1-新增;2-修改;3-删除  删除时’二级渠道编号’必填</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel</stringProp>
+                  <stringProp name="Argument.value">cmbc0002</stringProp>
+                  <stringProp name="Argument.desc">二级渠道编号,AN15</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_Name" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_Name</stringProp>
+                  <stringProp name="Argument.value">cmbc0002-modify</stringProp>
+                  <stringProp name="Argument.desc">二级渠道中文名称, AN60</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_Person" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_Person</stringProp>
+                  <stringProp name="Argument.value">袁大大</stringProp>
+                  <stringProp name="Argument.desc">法定代表人姓名, AN60</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_CertType" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_CertType</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.desc">法人代表证件类型: 0-身份证 1-护照 2-军官证 3-士兵证 4-港澳台居民往来通行证 5-临时身份证 6-户口本 7-其他 9-警官证 12-外国人永久居留</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_CertNo" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_CertNo</stringProp>
+                  <stringProp name="Argument.value">3100022000298gggg</stringProp>
+                  <stringProp name="Argument.desc">18位</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_Company_No" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_Company_No</stringProp>
+                  <stringProp name="Argument.value">有效公司似懂非懂</stringProp>
+                  <stringProp name="Argument.desc">工商营业执照, AN20</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_Addr" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_Addr</stringProp>
+                  <stringProp name="Argument.value">上海武东路198号4楼3000666661室</stringProp>
+                  <stringProp name="Argument.desc">地址, AN60</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_PostCode" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_PostCode</stringProp>
+                  <stringProp name="Argument.value">555555</stringProp>
+                  <stringProp name="Argument.desc">邮编，AN6</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_Capital" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_Capital</stringProp>
+                  <stringProp name="Argument.value">200.45</stringProp>
+                  <stringProp name="Argument.desc">注册资金(万元), N9</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_RegDate" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_RegDate</stringProp>
+                  <stringProp name="Argument.value">20180515</stringProp>
+                  <stringProp name="Argument.desc">签约日期 YYYYMMDD</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_ContactPerson" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_ContactPerson</stringProp>
+                  <stringProp name="Argument.value">aliceHE</stringProp>
+                  <stringProp name="Argument.desc">联系人，AN60</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_ContactPhone" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_ContactPhone</stringProp>
+                  <stringProp name="Argument.value">18900015555</stringProp>
+                  <stringProp name="Argument.desc">联系电话，AN50</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_Mail" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_Mail</stringProp>
+                  <stringProp name="Argument.value">alicea5555555@163.com</stringProp>
+                  <stringProp name="Argument.desc">联系邮箱, AN50</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_LimitDay" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_LimitDay</stringProp>
+                  <stringProp name="Argument.value">20</stringProp>
+                  <stringProp name="Argument.desc">必填  0-当天 1-可以是第二天交款 以此类推, N10</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="subChannel_Check" elementType="Argument">
+                  <stringProp name="Argument.name">subChannel_Check</stringProp>
+                  <stringProp name="Argument.value">1</stringProp>
+                  <stringProp name="Argument.desc">必填 1-是 0-否, AN1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="path" elementType="Argument">
+                  <stringProp name="Argument.name">path</stringProp>
+                  <stringProp name="Argument.value">/Users/yihong/Documents/jmeter/Socket/temp/</stringProp>
+                  <stringProp name="Argument.desc">本地文件保存路径，确保路径存在</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+              <boolProp name="resetInterpreter">true</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import org.apache.commons.lang.StringUtils;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+// 获取自定义数据====================================================================================================
+String bank = vars.get(&quot;bank&quot;); //机构名称
+String reqDate = vars.get(&quot;reqDate&quot;); //日期
+String batch = vars.get(&quot;batch&quot;); //批次
+// String userNo=vars.get(&quot;userNo&quot;); //串配号
+// String userName=vars.get(&quot;userName&quot;); //串配号的名称
+// String certNo=vars.get(&quot;certNo&quot;); //身份证号
+String subChannel = vars.get(&quot;subChannel&quot;); //二级渠道编号
+String subChannel_type = vars.get(&quot;subChannel_type&quot;); //二级渠道报备类型： 1-新增;2-修改;3-删除  删除时’二级渠道编号’必填
+String subChannel_Name = vars.get(&quot;subChannel_Name&quot;); //二级渠道中文名称
+String subChannel_Person = vars.get(&quot;subChannel_Person&quot;); //法定代表人姓名
+String subChannel_CertType = vars.get(&quot;subChannel_CertType&quot;); //法人代表证件类型: 0-身份证 1-护照 2-军官证 3-士兵证 4-港澳台居民往来通行证 5-临时身份证 6-户口本 7-其他 9-警官证 12-外国人永久居留证
+String subChannel_CertNo = vars.get(&quot;subChannel_CertNo&quot;); //法人代表证件号码
+String subChannel_Company_No = vars.get(&quot;subChannel_Company_No&quot;); //工商营业执照
+String subChannel_Addr = vars.get(&quot;subChannel_Addr&quot;); //地址
+String subChannel_PostCode = vars.get(&quot;subChannel_PostCode&quot;); //邮编
+String subChannel_Capital = vars.get(&quot;subChannel_Capital&quot;); //注册资金(万元)
+String subChannel_RegDate = vars.get(&quot;subChannel_RegDate&quot;); //签约日期 YYYYMMDD
+String subChannel_ContactPerson = vars.get(&quot;subChannel_ContactPerson&quot;); //联系人
+String subChannel_ContactPhone = vars.get(&quot;subChannel_ContactPhone&quot;); //联系电话
+String subChannel_Mail = vars.get(&quot;subChannel_Mail&quot;); //联系邮箱
+String subChannel_LimitDay = vars.get(&quot;subChannel_LimitDay&quot;); //交款限制天数
+String subChannel_Check = vars.get(&quot;subChannel_Check&quot;); //是否校验下属渠道
+// String subChannelPayDate = vars.get(&quot;subChannelPayDate&quot;); //用户交款日期
+// String billAmt = vars.get(&quot;billAmount&quot;);
+// String period = vars.get(&quot;period&quot;);  //帐期
+// String barcode = vars.get(&quot;barcode&quot;);  //条形码
+// String billPlanID = vars.get(&quot;billPlanID&quot;);  //账单计划ID
+// String bossSignNo = vars.get(&quot;bossSignNo&quot;); //第三方签约协议号
+// String bossOrgCode = vars.get(&quot;bossOrgCode&quot;); //子公司代码
+// String yfProcessNo = vars.get(&quot;yfProcessNo&quot;); //亿付业务处理号 ??
+//文件本地存放路径
+String baseDir = vars.get(&quot;path&quot;);
+//默认数据=========================================================================================================
+String tnxType = &quot;00B31300&quot;; //交易识别码, 二级渠道报备
+String tnxTypeFFT = &quot;B313000&quot;; //付费通二级渠道报备代码
+// String billBrh = &quot;888880003502900&quot;; //出账机构代码, 固定值
+String totalNum = &quot;000001&quot;; //总记录数, 目前只支持1条数据
+String commentsTotal = &quot;000&quot;; //备注
+
+//=========================银行二级渠道报备设置===================================================================================
+//农行
+String abcCode=&quot;508290060120001&quot;; //农行渠道机构代码
+String abcFilePath=&quot;/ori-data/ftp-test/bill/abc/sub_channel_request/&quot;; 
+//招行
+String cmbcCode=&quot;508290060120026&quot;; //招行渠道机构代码
+String cmbcFilePath=&quot;/ori-data/ftp-test/bill/cmbc/sub_channel_request/&quot;; 
+//中国银行
+String bocCode=&quot;508290060120023&quot;; //中国银行渠道机构代码
+String bocFilePath=&quot;/ori-data/ftp-test/bill/boc/sub_channel_request/&quot;; 
+//上海银行
+String bosCode=&quot;508290060120024&quot;; //上海银行渠道机构代码
+String bosFilePath=&quot;/ori-data/ftp-test/bill/bos/sub_channel_request/&quot;; 
+//工商银行
+String icbcCode=&quot;508290060120002&quot;; //上海银行渠道机构代码
+String icbcFilePath=&quot;/ori-data/ftp-test/bill/icbc/sub_channel_request/&quot;;
+// 付费通联机
+String fftCode_online = &quot;888888888888888&quot;;
+String fftCode_onlineFilePath = &quot;/ori-data/ftp-test/bill/fft/sub_channel_request/&quot;;
+//光大联机 
+String cebCode=&quot;508290060120027&quot;;
+String cebFilePath=&quot;/ori-data/ftp-test/bill/ceb/sub_channel_request/&quot;;
+
+//===================================================================================================================
+//保存文件成gbk， 填充0或者空格
+
+public class Tools {
+	public static void transferFile(String srcString, String destFileName) {
+		FileOutputStream fos = new FileOutputStream(destFileName);
+		OutputStreamWriter osw = new OutputStreamWriter(fos, &quot;GBK&quot;);
+		osw.write(srcString);
+		osw.flush();
+	}
+
+	public static String PrefixInteger(String srcString, int length) {
+		/*
+		 * 例如，要求：6位编号自动生成，递增，格式为“000001”。 解释：0代表前面要补的字符，6代表字符串长度，d表示参数为整数类型
+		 */
+		return StringUtils.leftPad(srcString, length, &quot;0&quot;);
+	}
+
+	public static String PrefixSpace(String srcString, int length) {
+		int a = (srcString.getBytes().length - srcString.length())/2;
+		if (a &gt; 0) {
+			// 如果包含N个中文字符(一个中文 占两位长度)，则值域长度减少N位(length = length - N)
+			length = length - a;
+		}
+		// 右侧补 空字符串 至达到长度length
+		return StringUtils.rightPad(srcString, length, &quot; &quot;);
+	}
+
+	public static void subChannelRequest(String bank){
+		String reqBrhCode = &quot;&quot;;
+		String filePath = &quot;&quot;;
+		String fileBatch = new SimpleDateFormat(&quot;yyyyMMddSSS&quot;).format(new Date());  //文件批号 ，11位
+		String channelSerialNo = new SimpleDateFormat(&quot;yyyyMMddHHmmssSSS&quot;).format(new Date()); //二级渠道报备流水号
+		String fileNo = &quot;0&quot; + batch;
+		String commentsDetail = &quot;&quot;; //明细的备注，只有付费通有
+
+		if(bank.equals(&quot;abc&quot;)){
+			reqBrhCode = abcCode; // 农行渠道机构代码
+			filePath = abcFilePath; // 串配文件ftp路径
+		}else if(bank.equals(&quot;cmbc&quot;)){
+			reqBrhCode = cmbcCode; // 招行渠道机构代码
+			filePath = cmbcFilePath; // 串配文件ftp路径
+		}else if(bank.equals(&quot;boc&quot;)){
+			reqBrhCode = bocCode; // 中国银行渠道机构代码
+			filePath = bocFilePath; // 串配文件ftp路径
+		}else if(bank.equals(&quot;fft_online&quot;)){  //付费通联机
+			reqBrhCode = fftCode_online; 
+			filePath = fftCode_onlineFilePath;
+			tnxType = tnxTypeFFT;  //付费通替换交易代码
+			fileNo = batch;  //付费通文件批号为10位
+			commentsDetail = &quot;000&quot;; //付费通有的明细备注
+		}else if(bank.equals(&quot;ceb_online&quot;)){  //光大联机
+			reqBrhCode = cebCode;
+			filePath = cebFilePath;
+		}
+
+		// 文件名组装
+		String fileName = reqBrhCode + reqDate + batch + &quot;.&quot; + tnxType;
+
+		// 汇总 没有失败笔数
+		String totalLine = reqBrhCode + reqDate + fileNo + totalNum + commentsTotal + &quot;\n&quot;;
+
+		// 明细  
+		// 渠道签约号 农行 - 用户证号 + 身份证
+		String detailLine = PrefixSpace(channelSerialNo, 20) + subChannel_type + PrefixSpace(subChannel, 15) + PrefixSpace(subChannel_Name, 60)
+			+ PrefixSpace(subChannel_Person, 60) + PrefixSpace(subChannel_CertType, 3) + PrefixSpace(subChannel_CertNo, 18)
+			+ PrefixSpace(subChannel_Company_No, 20) + PrefixSpace(subChannel_Addr, 60) + PrefixSpace(subChannel_PostCode, 6)
+			+ PrefixSpace(subChannel_Capital, 9) + PrefixSpace(subChannel_RegDate, 8) + PrefixSpace(subChannel_ContactPerson, 60)
+			+ PrefixSpace(subChannel_ContactPhone, 50) + PrefixSpace(subChannel_Mail, 50) + PrefixSpace(subChannel_LimitDay, 10)
+			+ subChannel_Check;
+
+		//付费通明细最后增加备注
+		if(bank.contains(&quot;fft&quot;)){
+			detailLine = detailLine + commentsDetail;
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine+detailLine),localFilePath);
+		String remoteFilePath = filePath + fileName;
+		//参数返回
+		vars.put(&quot;localFilePath&quot;, localFilePath);
+		vars.put(&quot;remoteFilePath&quot;, remoteFilePath);
+	} 
+}
+
+Tools.subChannelRequest(bank);
+
+</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>false</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <threadCounts>true</threadCounts>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="代收文件" enabled="true"/>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="bank" elementType="Argument">
+                <stringProp name="Argument.name">bank</stringProp>
+                <stringProp name="Argument.value">icbc</stringProp>
+                <stringProp name="Argument.desc">付费通-fft; 工行代收-icbc; 邮局代收-youju; 光大代收-ceb; 联合快客代收-lianhua</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="reqDate" elementType="Argument">
+                <stringProp name="Argument.name">reqDate</stringProp>
+                <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
+                <stringProp name="Argument.desc">串配日期，必填，如20080120，默认当天</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="batch" elementType="Argument">
+                <stringProp name="Argument.name">batch</stringProp>
+                <stringProp name="Argument.value">15</stringProp>
+                <stringProp name="Argument.desc">批次，两位数， 确保日期+批次的组合唯一</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="subChannel" elementType="Argument">
+                <stringProp name="Argument.name">subChannel</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.desc">二级渠道代码,15位以内。可留空</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="subChannelPayDate" elementType="Argument">
+                <stringProp name="Argument.name">subChannelPayDate</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.desc">用户交款日期，YYYYMMDD, 8位，可留空</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="barcode" elementType="Argument">
+                <stringProp name="Argument.name">barcode</stringProp>
+                <stringProp name="Argument.value">0610000200280070170710000001380072</stringProp>
+                <stringProp name="Argument.desc">第一张账单条码，34位，不可留空</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="billAmount" elementType="Argument">
+                <stringProp name="Argument.name">billAmount</stringProp>
+                <stringProp name="Argument.value">13800</stringProp>
+                <stringProp name="Argument.desc">第一张账单金额，单位分，不可留空</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="barcode2" elementType="Argument">
+                <stringProp name="Argument.name">barcode2</stringProp>
+                <stringProp name="Argument.value">0610000201120878170110000001380098</stringProp>
+                <stringProp name="Argument.desc">第二张账单条码，可留空</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="billAmount2" elementType="Argument">
+                <stringProp name="Argument.name">billAmount2</stringProp>
+                <stringProp name="Argument.value">13800</stringProp>
+                <stringProp name="Argument.desc">第二张账单金额，可留空</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="path" elementType="Argument">
+                <stringProp name="Argument.name">path</stringProp>
+                <stringProp name="Argument.value">/Users/yihong/Documents/jmeter/Socket/temp/</stringProp>
+                <stringProp name="Argument.desc">本地文件保存路径，确保路径存在</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="comments" elementType="Argument">
+                <stringProp name="Argument.name">comments</stringProp>
+                <stringProp name="Argument.value">联华快客每天只生成一个文件，要重复测试，请跟换日期</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">其他渠道更换批次号就可</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="生成代收文件" enabled="true">
+            <stringProp name="BeanShellSampler.query">import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import org.apache.commons.lang.StringUtils;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+// // 获取自定义数据====================================================================================================
+String bank = vars.get(&quot;bank&quot;); //机构名称
+String reqDate = vars.get(&quot;reqDate&quot;); //日期
+String batch = vars.get(&quot;batch&quot;); //批次
+// String userNo=vars.get(&quot;userNo&quot;); //串配号
+// String userName=vars.get(&quot;userName&quot;); //串配号的名称
+// String certNo=vars.get(&quot;certNo&quot;); //身份证号
+String subChannel=vars.get(&quot;subChannel&quot;); //二级请求机构代码
+String subChannelPayDate = vars.get(&quot;subChannelPayDate&quot;); //用户交款日期
+String barcode = vars.get(&quot;barcode&quot;);  //条形码
+String billAmt = vars.get(&quot;billAmount&quot;);
+String barcode2 = vars.get(&quot;barcode2&quot;);  //第二张条形码
+String billAmt2 = vars.get(&quot;billAmount2&quot;); //第二张账单金额
+// String period = vars.get(&quot;period&quot;);  //帐期
+// String billPlanID = vars.get(&quot;billPlanID&quot;);  //账单计划ID
+// String bossSignNo = vars.get(&quot;bossSignNo&quot;); //第三方签约协议号
+// String bossOrgCode = vars.get(&quot;bossOrgCode&quot;); //子公司代码
+// String yfProcessNo = vars.get(&quot;yfProcessNo&quot;); //亿付业务处理号 ??
+//文件本地存放路径
+String baseDir = vars.get(&quot;path&quot;);
+// // //默认数据=========================================================================================================
+// String tnxType = &quot;00B30510&quot;; //交易识别码, boss代扣结果文件
+// String tnxTypeFFT = &quot;L101000&quot;; //付费通老代扣结果： 成功销账
+// String billBrh = &quot;888880003502900&quot;; //出账机构代码, 固定值
+String totalNum = &quot;000001&quot;; //总记录数, 默认一条
+// String commentsTotal = &quot;000&quot;; //备注
+
+//===================================================================================================================
+//保存文件成gbk， 填充0或者空格
+
+public class Tools {
+	public static void transferFile(String srcString, String destFileName) {
+		FileOutputStream fos = new FileOutputStream(destFileName);
+		OutputStreamWriter osw = new OutputStreamWriter(fos, &quot;GBK&quot;);
+		osw.write(srcString);
+		osw.flush();
+	}
+
+	public static String PrefixInteger(String srcString, int length) {
+		/*
+		 * 例如，要求：6位编号自动生成，递增，格式为“000001”。 解释：0代表前面要补的字符，6代表字符串长度，d表示参数为整数类型
+		 */
+		return StringUtils.leftPad(srcString, length, &quot;0&quot;);
+	}
+
+	public static String PrefixSpace(String srcString, int length) {
+		int a = (srcString.getBytes().length - srcString.length())/2;
+		if (a &gt; 0) {
+			// 如果包含N个中文字符(一个中文 占两位长度)，则值域长度减少N位(length = length - N)
+			length = length - a;
+		}
+		// 右侧补 空字符串 至达到长度length
+		return StringUtils.rightPad(srcString, length, &quot; &quot;);
+	}
+
+	public static void collectICBC() {
+		String orgCode = &quot;9002032&quot;; //工行代收
+		String tnxType = &quot;CSH&quot;; //文件类型
+		String failedNum = &quot;000000&quot;; //失败数
+		String failedAmt = &quot;00000000000&quot;; //失败金额
+		String supplyOrgCode = &quot;000000180510000&quot;; //15位
+		String serialNo = new SimpleDateFormat(&quot;HHmmSSS&quot;).format(new Date()); //7位随机数
+		String serialNo2 = new SimpleDateFormat(&quot;HHmmSSS&quot;).format(new Date()); //7位随机数
+		String totalAmt = &quot;&quot;;
+		if (barcode2.length() != 0) {
+			totalAmt = String.valueOf(Integer.parseInt(billAmt) + Integer.parseInt(billAmt2)); //总额
+			totalNum = &quot;000002&quot;; //记录数改成2
+		} else {
+			totalAmt = billAmt; 
+		}
+
+		// 文件名组装
+		String fileName = batch + orgCode + reqDate.substring(2) + &quot;.&quot; + tnxType;
+
+		// 汇总 没有失败笔数
+		String totalLine = &quot;S&quot; + batch + orgCode + reqDate + totalNum + PrefixInteger(totalAmt, 11) + failedNum + failedAmt;
+
+		// 明细  
+		String detailLine = &quot;000000&quot; + reqDate.substring(2) + &quot;000&quot; + PrefixInteger(serialNo, 7) + &quot;00000000&quot;
+			+ orgCode + &quot;00000000000000000&quot; + reqDate.substring(0, 6) + &quot;0101&quot; + PrefixInteger(billAmt, 9) + &quot;000000000&quot;
+			+ PrefixSpace(&quot;&quot;, 8) + &quot;00&quot; + orgCode + PrefixInteger(barcode, 34);
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15) + subChannelPayDate;
+		}
+
+		//判断是否有第二条数据
+		if (barcode2.length() != 0) {
+			String detailLine2 = &quot;000000&quot; + reqDate.substring(2) + &quot;000&quot; + PrefixInteger(serialNo2, 7) + &quot;00000000&quot;
+			+ orgCode + &quot;00000000000000000&quot; + reqDate.substring(0, 6) + &quot;0101&quot; + PrefixInteger(billAmt2, 9) + &quot;000000000&quot;
+			+ PrefixSpace(&quot;&quot;, 8) + &quot;00&quot; + orgCode + PrefixInteger(barcode2, 34);
+
+			//判断subChannel不为空时，明细里面增加二级渠道报备字段
+			if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+				detailLine2 = detailLine2 + PrefixSpace(subChannel, 15) + subChannelPayDate;
+			}
+			detailLine = detailLine + &quot;\n&quot; + detailLine2;
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((detailLine + &quot;\n&quot; + totalLine),localFilePath);
+		SampleResult.setDataEncoding(&quot;UTF-8&quot;);
+		SampleResult.setResponseData(&quot;工行代收文件生成成功!\n&quot; + &quot;文件名:  &quot; + fileName + &quot;\n&quot; + &quot;文件路径:  &quot; + baseDir);
+	}
+
+	public static void collectCEB() {
+		String chlSubCode = &quot;WY&quot;;
+		String totalAmt = &quot;&quot;;
+		if (barcode2.length() != 0) {
+			totalAmt = String.valueOf(Integer.parseInt(billAmt) + Integer.parseInt(billAmt2)); //总额
+			totalNum = &quot;000002&quot;; //记录数改成2
+		} else {
+			totalAmt = billAmt; 
+		}
+
+		// 文件名组装
+		String fileName = &quot;GDYH&quot; + reqDate + &quot;036&quot; + batch + &quot;.CSH&quot;;
+
+		// 汇总 没有失败笔数
+		String totalLine = &quot;F&quot; + reqDate + &quot;821000&quot; + &quot;036&quot; + batch + totalNum + PrefixInteger(totalAmt, 14);
+
+		//明细
+		String detailLine = &quot;T&quot; + reqDate + barcode + chlSubCode;
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15) + subChannelPayDate;
+		}
+
+		//判断是否有第二条数据
+		if (barcode2.length() != 0) {
+			String detailLine2 = &quot;T&quot; + reqDate + barcode + chlSubCode;
+
+			//判断subChannel不为空时，明细里面增加二级渠道报备字段
+			if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+				detailLine2 = detailLine2 + PrefixSpace(subChannel, 15) + subChannelPayDate;
+			}
+			detailLine = detailLine + &quot;\n&quot; + detailLine2;
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine + &quot;\n&quot; + detailLine),localFilePath);
+		SampleResult.setDataEncoding(&quot;UTF-8&quot;);
+		SampleResult.setResponseData(&quot;光大代收文件生成成功!\n&quot; + &quot;文件名:  &quot; + fileName + &quot;\n&quot; + &quot;文件路径:  &quot; + baseDir);
+	}
+
+	public static void collectFFT() {
+		String billBrh = &quot;888880003502900&quot;; //出账机构代码, 固定值
+		String totalAmt = &quot;&quot;;
+		if (barcode2.length() != 0) {
+			totalAmt = String.valueOf(Integer.parseInt(billAmt) + Integer.parseInt(billAmt2)); //总额
+			totalNum = &quot;000002&quot;; //记录数改成2
+		} else {
+			totalAmt = billAmt; 
+		}
+
+		// 文件名组装
+		String fileName = billBrh + reqDate + batch + &quot;.B101000&quot;;
+
+		// 汇总 没有失败笔数
+		String totalLine = billBrh + reqDate + batch + totalNum + PrefixInteger(totalAmt, 14) + &quot;000&quot;;
+
+		//明细
+		String detailLine = &quot;00&quot; + billBrh + barcode + PrefixSpace(&quot;&quot;, 6) + batch + PrefixSpace(&quot;&quot;, 31)
+			+ PrefixInteger(billAmt, 10) + reqDate + &quot;888880201000020&quot; + PrefixSpace(&quot;1998&quot;, 8)
+			+ PrefixSpace(&quot;&quot;, 40) + &quot;00&quot; + &quot;000&quot;;
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15) + subChannelPayDate;
+		}
+
+		//判断是否有第二条数据
+		if (barcode2.length() != 0) {
+			String detailLine2 = &quot;00&quot; + billBrh + barcode2 + PrefixSpace(&quot;&quot;, 6) + batch + PrefixSpace(&quot;&quot;, 31)
+			+ PrefixInteger(billAmt2, 10) + reqDate + &quot;888880201000020&quot; + PrefixSpace(&quot;1998&quot;, 8)
+			+ PrefixSpace(&quot;&quot;, 40) + &quot;00&quot; + &quot;000&quot;;
+
+			//判断subChannel不为空时，明细里面增加二级渠道报备字段
+			if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+				detailLine2 = detailLine2 + PrefixSpace(subChannel, 15) + subChannelPayDate;
+			}
+			detailLine = detailLine + &quot;\n&quot; + detailLine2;
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine + &quot;\n&quot; + detailLine),localFilePath);
+		SampleResult.setDataEncoding(&quot;UTF-8&quot;);
+		SampleResult.setResponseData(&quot;付费通代收文件生成成功!\n&quot; + &quot;文件名:  &quot; + fileName + &quot;\n&quot; + &quot;文件路径:  &quot; + baseDir);
+	}
+
+	public static void collectYouju() {
+		String totalAmt = &quot;&quot;;
+		if (barcode2.length() != 0) {
+			totalAmt = String.valueOf(Integer.parseInt(billAmt) + Integer.parseInt(billAmt2)); //总额
+			totalNum = &quot;000002&quot;; //记录数改成2
+		} else {
+			totalAmt = billAmt; 
+		}
+
+		// 文件名组装
+		String fileName = &quot;DFYX&quot; + reqDate + &quot;023&quot; + batch + &quot;.CSH&quot;;
+
+		// 汇总 没有失败笔数
+		String totalLine = &quot;F&quot; + reqDate + &quot;084001&quot; + &quot;023&quot; + batch + totalNum + PrefixInteger(totalAmt, 14);
+
+		//明细
+		String detailLine = &quot;T&quot; + reqDate + barcode;
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15) + subChannelPayDate;
+		}
+
+		//判断是否有第二条数据
+		if (barcode2.length() != 0) {
+			String detailLine2 = &quot;T&quot; + reqDate + barcode2;
+
+			//判断subChannel不为空时，明细里面增加二级渠道报备字段
+			if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+				detailLine2 = detailLine2 + PrefixSpace(subChannel, 15) + subChannelPayDate;
+			}
+			detailLine = detailLine + &quot;\n&quot; + detailLine2;
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine + &quot;\n&quot; + detailLine),localFilePath);
+		SampleResult.setDataEncoding(&quot;UTF-8&quot;);
+		SampleResult.setResponseData(&quot;邮局代收文件生成成功!\n&quot; + &quot;文件名:  &quot; + fileName + &quot;\n&quot; + &quot;文件路径:  &quot; + baseDir);
+	}
+
+	public static void collectLianhua() {
+		String totalAmt = &quot;&quot;;
+		if (barcode2.length() != 0) {
+			totalAmt = String.valueOf(Integer.parseInt(billAmt) + Integer.parseInt(billAmt2)); //总额
+			totalNum = &quot;000002&quot;; //记录数改成2
+		} else {
+			totalAmt = billAmt; 
+		}
+
+		// 文件名组装
+		String fileName = &quot;LHKK&quot; + reqDate + &quot;.CSH&quot;;
+
+		// 汇总 没有失败笔数
+		String totalLine = &quot;F&quot; + reqDate + &quot;084002&quot; + &quot;023&quot; + batch + totalNum + PrefixInteger(totalAmt, 14);
+
+		//明细
+		String detailLine = &quot;T&quot; + reqDate + barcode;
+
+		//判断subChannel不为空时，明细里面增加二级渠道报备字段
+		if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+			detailLine = detailLine + PrefixSpace(subChannel, 15) + subChannelPayDate;
+		}
+
+		//判断是否有第二条数据
+		if (barcode2.length() != 0) {
+			String detailLine2 = &quot;T&quot; + reqDate + barcode2;
+
+			//判断subChannel不为空时，明细里面增加二级渠道报备字段
+			if (subChannel.length() != 0 &amp;&amp; subChannelPayDate.length() != 0) {
+				detailLine2 = detailLine2 + PrefixSpace(subChannel, 15) + subChannelPayDate;
+			}
+			detailLine = detailLine + &quot;\n&quot; + detailLine2;
+		}
+
+		// 文件内容存入本地
+		String localFilePath = baseDir + fileName;
+		transferFile((totalLine + &quot;\n&quot; + detailLine),localFilePath);
+		SampleResult.setDataEncoding(&quot;UTF-8&quot;);
+		SampleResult.setResponseData(&quot;联华快客代收文件生成成功!\n&quot; + &quot;文件名:  &quot; + fileName + &quot;\n&quot; + &quot;文件路径:  &quot; + baseDir);
+	}
+
+}
+
+if (bank.equals(&quot;icbc&quot;)) {  //工行代收
+	Tools.collectICBC();
+} else if (bank.equals(&quot;ceb&quot;)) {  //光大代收
+	Tools.collectCEB();
+} else if (bank.equals(&quot;fft&quot;)) {  //付费通代收
+	Tools.collectFFT();
+} else if (bank.equals(&quot;youju&quot;)) {  //邮局代收
+	Tools.collectYouju();
+} else if (bank.equals(&quot;lianhua&quot;)) {  //联华快客代收
+	Tools.collectLianhua();
+}</stringProp>
+            <stringProp name="BeanShellSampler.filename"></stringProp>
+            <stringProp name="BeanShellSampler.parameters"></stringProp>
+            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+          </BeanShellSampler>
+          <hashTree/>
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>false</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <threadCounts>true</threadCounts>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
