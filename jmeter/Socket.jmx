@@ -2239,7 +2239,7 @@ Tools.subChannelRequest(bank);
             <collectionProp name="Arguments.arguments">
               <elementProp name="bank" elementType="Argument">
                 <stringProp name="Argument.name">bank</stringProp>
-                <stringProp name="Argument.value">icbc</stringProp>
+                <stringProp name="Argument.value">fft</stringProp>
                 <stringProp name="Argument.desc">付费通-fft; 工行代收-icbc; 邮局代收-youju; 光大代收-ceb; 联合快客代收-lianhua</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -2251,7 +2251,7 @@ Tools.subChannelRequest(bank);
               </elementProp>
               <elementProp name="batch" elementType="Argument">
                 <stringProp name="Argument.name">batch</stringProp>
-                <stringProp name="Argument.value">15</stringProp>
+                <stringProp name="Argument.value">01</stringProp>
                 <stringProp name="Argument.desc">批次，两位数， 确保日期+批次的组合唯一</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -2269,7 +2269,7 @@ Tools.subChannelRequest(bank);
               </elementProp>
               <elementProp name="barcode" elementType="Argument">
                 <stringProp name="Argument.name">barcode</stringProp>
-                <stringProp name="Argument.value">0610000200280070170710000001380072</stringProp>
+                <stringProp name="Argument.value">0610000001750349170710000001380049</stringProp>
                 <stringProp name="Argument.desc">第一张账单条码，34位，不可留空</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -2281,13 +2281,13 @@ Tools.subChannelRequest(bank);
               </elementProp>
               <elementProp name="barcode2" elementType="Argument">
                 <stringProp name="Argument.name">barcode2</stringProp>
-                <stringProp name="Argument.value">0610000201120878170110000001380098</stringProp>
+                <stringProp name="Argument.value"></stringProp>
                 <stringProp name="Argument.desc">第二张账单条码，可留空</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="billAmount2" elementType="Argument">
                 <stringProp name="Argument.name">billAmount2</stringProp>
-                <stringProp name="Argument.value">13800</stringProp>
+                <stringProp name="Argument.value"></stringProp>
                 <stringProp name="Argument.desc">第二张账单金额，可留空</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>

@@ -1,0 +1,59 @@
+{
+    "access_token": "9_ecD4zS4btwZDo0t7L77flBBNaqOutfmuDqRIt4ewyN0URfXNMKRdjROoi0jloxY-eQpnoi508xKhW16WfT3SdlWcAIPPSRswrzn3VV82WwG51M9JDnfpl8cW1KJ5w4V4GLxBlfKZOGObHXouNIEbAGAWRN", 
+    "expires_in": 7200
+}
+
+
+
+{
+    "menu": {
+        "button": [
+            {
+                "type": "view", 
+                "name": "生活缴费", 
+                "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf6301a51a4429cefredirect_uri=https%3a%2f%2fqa-test.shfc999.com%2fbill-steward%2fweixin%2fshjf.doresponse_type=codescope=snsapi_basestate=123#wechat_redirect", 
+                "sub_button": [ ]
+            }, 
+            {
+                "name": "生活优选", 
+                "sub_button": [
+                    {
+                        "type": "view", 
+                        "name": "静默授权回调", 
+                        "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf6301a51a4429cefredirect_uri=https%3a%2f%2fqa-test.shfc999.com%2fbill-steward%2fauth%2fsilenceAuth?forwardUrl=http%3a%2f%2faliyuntest1.aiyoumi.com%3a20490%2flogin%2fdfyx%2fdfwxAuthresponse_type=codescope=snsapi_basestate=123#wechat_redirect", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }, 
+            {
+                "name": "自助服务", 
+                "sub_button": [
+                    {
+                        "type": "view", 
+                        "name": "委托代扣", 
+                        "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf6301a51a4429cefredirect_uri=https%3a%2f%2fqa-test.shfc999.com%2fbill-steward%2fviews%2fapplication%2fmyBill.htmlresponse_type=codescope=snsapi_basestate=123#wechat_redirect", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "个人中心", 
+                        "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf6301a51a4429cefredirect_uri=https%3a%2f%2fqa-test.shfc999.com%2fbill-steward%2fweixin%2fgrzx.doresponse_type=codescope=snsapi_basestate=123#wechat_redirect", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "交易记录", 
+                        "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf6301a51a4429cefredirect_uri=https%3a%2f%2fqa-test.shfc999.com%2fbill-steward%2fweixin%2fjyjlQuery.doresponse_type=codescope=snsapi_basestate=123#wechat_redirect", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "FAQ", 
+                        "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxf6301a51a4429cefredirect_uri=https%3a%2f%2fqa-test.shfc999.com%2fbill-steward%2fweixin%2ffaq.doresponse_type=codescope=snsapi_basestate=123#wechat_redirect", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }
+        ]
+    }
+}
