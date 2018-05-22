@@ -604,55 +604,55 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="bank" elementType="Argument">
                   <stringProp name="Argument.name">bank</stringProp>
-                  <stringProp name="Argument.value">${bank}</stringProp>
+                  <stringProp name="Argument.value">fft_new</stringProp>
                   <stringProp name="Argument.desc">付费通新代扣串配-fft_new;付费通老代扣串配-fft_old; 农行代扣-abc; 工行代扣-icbc; 招行代扣-cmbc; 中行代扣-boc; 上行代扣-bos</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="reqDate" elementType="Argument">
                   <stringProp name="Argument.name">reqDate</stringProp>
-                  <stringProp name="Argument.value">${reqDate}</stringProp>
+                  <stringProp name="Argument.value">${__time(yyyyMMdd,)}</stringProp>
                   <stringProp name="Argument.desc">串配日期，必填，如20080120，默认当天</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="batch" elementType="Argument">
                   <stringProp name="Argument.name">batch</stringProp>
-                  <stringProp name="Argument.value">${batch}</stringProp>
+                  <stringProp name="Argument.value">01</stringProp>
                   <stringProp name="Argument.desc">批次，两位数， 确保日期+批次的组合唯一</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="userNo" elementType="Argument">
                   <stringProp name="Argument.name">userNo</stringProp>
-                  <stringProp name="Argument.value">${userNo}</stringProp>
+                  <stringProp name="Argument.value">18334056423</stringProp>
                   <stringProp name="Argument.desc">用户证号</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="userName" elementType="Argument">
                   <stringProp name="Argument.name">userName</stringProp>
-                  <stringProp name="Argument.value">${userName}</stringProp>
+                  <stringProp name="Argument.value">黄欢</stringProp>
                   <stringProp name="Argument.desc">账单的用户姓名</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="certNo" elementType="Argument">
                   <stringProp name="Argument.name">certNo</stringProp>
-                  <stringProp name="Argument.value">${certNo}</stringProp>
+                  <stringProp name="Argument.value">420982198508282829</stringProp>
                   <stringProp name="Argument.desc">身份证</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="billPlanID" elementType="Argument">
                   <stringProp name="Argument.name">billPlanID</stringProp>
-                  <stringProp name="Argument.value">${billPlanID}</stringProp>
+                  <stringProp name="Argument.value">222068599</stringProp>
                   <stringProp name="Argument.desc">账单计划ID, 银行为上海银行时必填</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="subChannel" elementType="Argument">
                   <stringProp name="Argument.name">subChannel</stringProp>
-                  <stringProp name="Argument.value">${subChannel}</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
                   <stringProp name="Argument.desc">二级请求机构代码,15位以内</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="path" elementType="Argument">
                   <stringProp name="Argument.name">path</stringProp>
-                  <stringProp name="Argument.value">${path}</stringProp>
+                  <stringProp name="Argument.value">/Users/yihong/Documents/jmeter/Socket/temp/</stringProp>
                   <stringProp name="Argument.desc">本地文件保存路径，确保路径存在</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -861,7 +861,7 @@ public class Tools {
 		String fftCodeOld = &quot;777777777777777&quot;; //付费通老代扣的机构号，老代扣串解配使用这个
 		String fftAcct = &quot;1000&quot; + (int)((Math.random()*9+1)*100000); //随机付费通账号， 10位
 		String fftTelphone = &quot;138000000&quot; + (int)((Math.random()*9+1)*10); //联系电话，随机
-		String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
+		// String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
 
 		//如果是付费通老代扣，把fftCode值替换成“&quot;777777777777777&quot;
 		if (fftType.equals(&quot;old&quot;)){
@@ -877,7 +877,7 @@ public class Tools {
 		// 明细
 		String detailLine = authType + billBrh + authNoType + PrefixSpace(userNo, 30) + reqDate + fftCode + PrefixSpace(fftAcct, 40)
 			+ PrefixSpace(userName, 40) + PrefixSpace(&quot;&quot;, 110) + PrefixSpace(certNo, 20) + PrefixSpace(&quot;&quot;, 20)
-			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(deviceNo, 30) + commentsTotal;
+			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(billPlanID, 30) + commentsTotal;
 
 		//判断subChannel不为空时，明细里面增加二级渠道报备字段
 		if (subChannel.length() != 0) {
@@ -962,7 +962,7 @@ if (bank.equals(&quot;abc&quot;) || bank.equals(&quot;cmbc&quot;) || bank.equals
               <collectionProp name="Arguments.arguments">
                 <elementProp name="bank" elementType="Argument">
                   <stringProp name="Argument.name">bank</stringProp>
-                  <stringProp name="Argument.value">icbc</stringProp>
+                  <stringProp name="Argument.value">fft_new</stringProp>
                   <stringProp name="Argument.desc">付费通新代扣解串配-fft_new;付费通老代扣解串配-fft_old; 农行代扣-abc; 工行代扣-icbc; 招行代扣-cmbc; 中行代扣-boc; 上行代扣-bos</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -974,37 +974,37 @@ if (bank.equals(&quot;abc&quot;) || bank.equals(&quot;cmbc&quot;) || bank.equals
                 </elementProp>
                 <elementProp name="batch" elementType="Argument">
                   <stringProp name="Argument.name">batch</stringProp>
-                  <stringProp name="Argument.value">06</stringProp>
+                  <stringProp name="Argument.value">02</stringProp>
                   <stringProp name="Argument.desc">批次，两位数， 确保日期+批次的组合唯一</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="userNo" elementType="Argument">
                   <stringProp name="Argument.name">userNo</stringProp>
-                  <stringProp name="Argument.value">18301135473</stringProp>
+                  <stringProp name="Argument.value">18334056423</stringProp>
                   <stringProp name="Argument.desc">用户证号</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="userName" elementType="Argument">
                   <stringProp name="Argument.name">userName</stringProp>
-                  <stringProp name="Argument.value">顾为民</stringProp>
+                  <stringProp name="Argument.value">黄欢</stringProp>
                   <stringProp name="Argument.desc">账单的用户姓名</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="certNo" elementType="Argument">
                   <stringProp name="Argument.name">certNo</stringProp>
-                  <stringProp name="Argument.value">310105195401012858</stringProp>
+                  <stringProp name="Argument.value">420982198508282829</stringProp>
                   <stringProp name="Argument.desc">身份证</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="billPlanID" elementType="Argument">
                   <stringProp name="Argument.name">billPlanID</stringProp>
-                  <stringProp name="Argument.value">201813867</stringProp>
+                  <stringProp name="Argument.value">222068599</stringProp>
                   <stringProp name="Argument.desc">账单计划ID, 银行为上海银行时必填</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="subChannel" elementType="Argument">
                   <stringProp name="Argument.name">subChannel</stringProp>
-                  <stringProp name="Argument.value">icbc1112233</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="path" elementType="Argument">
@@ -1213,7 +1213,7 @@ public class Tools {
 		String fftCodeOld = &quot;777777777777777&quot;; //付费通老代扣的机构号，老代扣串解配使用这个
 		String fftAcct = &quot;1000&quot; + (int)((Math.random()*9+1)*100000); //随机付费通账号， 10位
 		String fftTelphone = &quot;138000000&quot; + (int)((Math.random()*9+1)*10); //联系电话，随机
-		String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
+		// String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
 
 		//如果是付费通老代扣，把fftCode值替换成“&quot;777777777777777&quot;
 		if (fftType.equals(&quot;old&quot;)){
@@ -1229,7 +1229,7 @@ public class Tools {
 		// 明细
 		String detailLine = authType + billBrh + authNoType + PrefixSpace(userNo, 30) + reqDate + fftCode + PrefixSpace(fftAcct, 40)
 			+ PrefixSpace(userName, 40) + PrefixSpace(&quot;&quot;, 110) + PrefixSpace(certNo, 20) + PrefixSpace(&quot;&quot;, 20)
-			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(deviceNo, 30) + commentsTotal;
+			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(billPlanID, 30) + commentsTotal;
 
 		//判断subChannel不为空时，明细里面增加二级渠道报备字段
 		if (subChannel.length() != 0) {
@@ -3026,7 +3026,7 @@ public class Tools {
 		String fftCodeOld = &quot;777777777777777&quot;; //付费通老代扣的机构号，老代扣串解配使用这个
 		String fftAcct = &quot;1000&quot; + (int)((Math.random()*9+1)*100000); //随机付费通账号， 10位
 		String fftTelphone = &quot;138000000&quot; + (int)((Math.random()*9+1)*10); //联系电话，随机
-		String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
+		// String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
 
 		//如果是付费通老代扣，把fftCode值替换成“&quot;777777777777777&quot;
 		if (fftType.equals(&quot;old&quot;)){
@@ -3042,7 +3042,7 @@ public class Tools {
 		// 明细
 		String detailLine = authType + billBrh + authNoType + PrefixSpace(userNo, 30) + reqDate + fftCode + PrefixSpace(fftAcct, 40)
 			+ PrefixSpace(userName, 40) + PrefixSpace(&quot;&quot;, 110) + PrefixSpace(certNo, 20) + PrefixSpace(&quot;&quot;, 20)
-			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(deviceNo, 30) + commentsTotal;
+			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(billPlanID, 30) + commentsTotal;
 
 		//判断subChannel不为空时，明细里面增加二级渠道报备字段
 		if (subChannel.length() != 0) {
@@ -3977,7 +3977,7 @@ public class Tools {
 		String fftCodeOld = &quot;777777777777777&quot;; //付费通老代扣的机构号，老代扣串解配使用这个
 		String fftAcct = &quot;1000&quot; + (int)((Math.random()*9+1)*100000); //随机付费通账号， 10位
 		String fftTelphone = &quot;138000000&quot; + (int)((Math.random()*9+1)*10); //联系电话，随机
-		String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
+		// String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
 
 		//如果是付费通老代扣，把fftCode值替换成“&quot;777777777777777&quot;
 		if (fftType.equals(&quot;old&quot;)){
@@ -3993,7 +3993,7 @@ public class Tools {
 		// 明细
 		String detailLine = authType + billBrh + authNoType + PrefixSpace(userNo, 30) + reqDate + fftCode + PrefixSpace(fftAcct, 40)
 			+ PrefixSpace(userName, 40) + PrefixSpace(&quot;&quot;, 110) + PrefixSpace(certNo, 20) + PrefixSpace(&quot;&quot;, 20)
-			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(deviceNo, 30) + commentsTotal;
+			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(billPlanID, 30) + commentsTotal;
 
 		//判断subChannel不为空时，明细里面增加二级渠道报备字段
 		if (subChannel.length() != 0) {
@@ -4812,7 +4812,7 @@ if (bank.equals(&quot;abc&quot;) || bank.equals(&quot;cmbc&quot;) || bank.equals
               <elementProp name="billPlanID" elementType="Argument">
                 <stringProp name="Argument.name">billPlanID</stringProp>
                 <stringProp name="Argument.value">52667569</stringProp>
-                <stringProp name="Argument.desc">账单计划ID, 银行为上海银行时必填</stringProp>
+                <stringProp name="Argument.desc">账单计划ID, 银行为上海银行或付费通时必填</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="barcode" elementType="Argument">
@@ -5153,7 +5153,7 @@ public class Tools {
 		String fftCodeOld = &quot;777777777777777&quot;; //付费通老代扣的机构号，老代扣串解配使用这个
 		String fftAcct = &quot;1000&quot; + (int)((Math.random()*9+1)*100000); //随机付费通账号， 10位
 		String fftTelphone = &quot;138000000&quot; + (int)((Math.random()*9+1)*10); //联系电话，随机
-		String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
+		// String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
 
 		//如果是付费通老代扣，把fftCode值替换成“&quot;777777777777777&quot;
 		if (fftType.equals(&quot;old&quot;)){
@@ -5169,7 +5169,7 @@ public class Tools {
 		// 明细
 		String detailLine = authType + billBrh + authNoType + PrefixSpace(userNo, 30) + reqDate + fftCode + PrefixSpace(fftAcct, 40)
 			+ PrefixSpace(userName, 40) + PrefixSpace(&quot;&quot;, 110) + PrefixSpace(certNo, 20) + PrefixSpace(&quot;&quot;, 20)
-			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(deviceNo, 30) + commentsTotal;
+			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(billPlanID, 30) + commentsTotal;
 
 		//判断subChannel不为空时，明细里面增加二级渠道报备字段
 		if (subChannel.length() != 0) {
@@ -5709,7 +5709,7 @@ public class Tools {
 		String fftCodeOld = &quot;777777777777777&quot;; //付费通老代扣的机构号，老代扣串解配使用这个
 		String fftAcct = &quot;1000&quot; + (int)((Math.random()*9+1)*100000); //随机付费通账号， 10位
 		String fftTelphone = &quot;138000000&quot; + (int)((Math.random()*9+1)*10); //联系电话，随机
-		String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
+		// String deviceNo = &quot;200&quot; + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
 
 		//如果是付费通老代扣，把fftCode值替换成“&quot;777777777777777&quot;
 		if (fftType.equals(&quot;old&quot;)){
@@ -5725,7 +5725,7 @@ public class Tools {
 		// 明细
 		String detailLine = authType + billBrh + authNoType + PrefixSpace(userNo, 30) + reqDate + fftCode + PrefixSpace(fftAcct, 40)
 			+ PrefixSpace(userName, 40) + PrefixSpace(&quot;&quot;, 110) + PrefixSpace(certNo, 20) + PrefixSpace(&quot;&quot;, 20)
-			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(deviceNo, 30) + commentsTotal;
+			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(billPlanID, 30) + commentsTotal;
 
 		//判断subChannel不为空时，明细里面增加二级渠道报备字段
 		if (subChannel.length() != 0) {

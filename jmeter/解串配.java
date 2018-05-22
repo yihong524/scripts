@@ -191,7 +191,7 @@ public class Tools {
 		String fftCodeOld = "777777777777777"; //付费通老代扣的机构号，老代扣串解配使用这个
 		String fftAcct = "1000" + (int)((Math.random()*9+1)*100000); //随机付费通账号， 10位
 		String fftTelphone = "138000000" + (int)((Math.random()*9+1)*10); //联系电话，随机
-		String deviceNo = "200" + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
+		// String deviceNo = "200" + (int)((Math.random()*9+1)*100000);  //付费通设备号吗，随机9位
 
 		//如果是付费通老代扣，把fftCode值替换成“"777777777777777"
 		if (fftType.equals("old")){
@@ -207,7 +207,7 @@ public class Tools {
 		// 明细
 		String detailLine = authType + billBrh + authNoType + PrefixSpace(userNo, 30) + reqDate + fftCode + PrefixSpace(fftAcct, 40)
 			+ PrefixSpace(userName, 40) + PrefixSpace("", 110) + PrefixSpace(certNo, 20) + PrefixSpace("", 20)
-			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(deviceNo, 30) + commentsTotal;
+			+ PrefixSpace(fftTelphone, 20) + PrefixSpace(billPlanID, 30) + commentsTotal;
 
 		//判断subChannel不为空时，明细里面增加二级渠道报备字段
 		if (subChannel.length() != 0) {
