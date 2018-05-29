@@ -2713,13 +2713,13 @@ if (bank.equals(&quot;icbc&quot;)) {  //工行代收
               </elementProp>
               <elementProp name="bossSignNo" elementType="Argument">
                 <stringProp name="Argument.name">bossSignNo</stringProp>
-                <stringProp name="Argument.value">100000516665</stringProp>
+                <stringProp name="Argument.value"></stringProp>
                 <stringProp name="Argument.desc">BOSS端签约协议号，在用户串配查询菜单查询</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="yfProcessNo" elementType="Argument">
                 <stringProp name="Argument.name">yfProcessNo</stringProp>
-                <stringProp name="Argument.value">ZD180518143818725843</stringProp>
+                <stringProp name="Argument.value"></stringProp>
                 <stringProp name="Argument.desc">亿付业务处理号 20位，支付订单号</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>

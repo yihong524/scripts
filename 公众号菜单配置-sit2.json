@@ -1,0 +1,54 @@
+{
+	"button": [
+		{
+			"type": "view", 
+			"name": "生活缴费", 
+			"url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe9f436bb96ae9d2a&redirect_uri=https%3a%2f%2fqa-test2.shfc999.com%2fbill-steward%2fweixin%2fshjf.do&response_type=code&scope=snsapi_base&state=123#wechat_redirect", 
+			"sub_button": [ ]
+		}, 
+		{
+			"type": "view", 
+			"name": "生活优选", 
+			"url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe9f436bb96ae9d2a&redirect_uri=https%3a%2f%2fqa-test2.shfc999.com%2fbill-steward%2fweixin%2fgw.do&response_type=code&scope=snsapi_base&state=123#wechat_redirect", 
+			"sub_button": [
+				{
+					"type": "view", 
+					"name": "静默授权回调", 
+					"url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe9f436bb96ae9d2a&redirect_uri=https%3a%2f%2fqa-test2.shfc999.com%2fbill-steward%2fauth%2fsilenceAuth?forwardUrl=http%3a%2f%2faliyuntest1.aiyoumi.com%3a20490%2flogin%2fdfyx%2fdfwxAuth&response_type=code&scope=snsapi_base&state=123#wechat_redirect", 
+					"sub_button": [ ]
+				}
+			]			
+		}, 
+		{
+			"name": "自助服务", 
+			"sub_button": [
+				{
+					"type": "view", 
+					"name": "委托代扣", 
+					"url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe9f436bb96ae9d2a&redirect_uri=https%3a%2f%2fqa-test2.shfc999.com%2fbill-steward%2fviews%2fapplication%2fmyBill.html&response_type=code&scope=snsapi_base&state=123#wechat_redirect", 
+					"sub_button": [ ]
+				}, 				{
+					"type": "view", 
+					"name": "个人中心", 
+					"url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe9f436bb96ae9d2a&redirect_uri=https%3a%2f%2fqa-test2.shfc999.com%2fbill-steward%2fweixin%2fgrzx.do&response_type=code&scope=snsapi_base&state=123#wechat_redirect", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "view", 
+					"name": "交易记录", 
+					"url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe9f436bb96ae9d2a&redirect_uri=https%3a%2f%2fqa-test2.shfc999.com%2fbill-steward%2fweixin%2fjyjlQuery.do&response_type=code&scope=snsapi_base&state=123#wechat_redirect", 
+					"sub_button": [ ]
+				}, 
+				{
+					"type": "view", 
+					"name": "FAQ", 
+					"url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe9f436bb96ae9d2a&redirect_uri=https%3a%2f%2fqa-test2.shfc999.com%2fbill-steward%2fweixin%2ffaq.do&response_type=code&scope=snsapi_base&state=123#wechat_redirect", 
+					"sub_button": [ ]
+				}
+			]
+		}
+	]
+}
+
+https://qa-test2.shfc999.com
+https://qa-test2.shfc999.com/bill-steward/weixin/shjf.do
